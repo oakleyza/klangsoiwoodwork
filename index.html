@@ -4,239 +4,245 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>กลางซอยค้าไม้ — ประตู วงกบ หน้าต่าง uPVC</title>
-  <link rel="icon" type="image/png" href="klangsoiwoodwork-logo.png" />
   <meta name="description" content="ร้านกลางซอยค้าไม้ จำหน่ายประตูไม้จริง ประตู uPVC ประตู WPC วงกบ หน้าต่าง ติดตั้งโดยช่างมีประสบการณ์" />
+  <link rel="icon" type="image/png" href="klangsoiwoodwork-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0E0D0B;
-      --bg2: #161410;
-      --bg3: #1E1B16;
-      --bg4: #252118;
-      --gold: #C8893A;
-      --gold2: #E8AB5A;
-      --text: #F0EBE3;
-      --text2: #A89880;
-      --text3: #6B5E4E;
-      --border: rgba(200,137,58,.15);
-      --border2: rgba(200,137,58,.28);
-      --radius: 12px;
-      --r-sm: 8px;
+      --bg:#FBF7F2; --bg2:#F5EFE6; --bg3:#EDE4D6;
+      --brown:#5C3D1E; --gold:#A0622A; --gold2:#C4813E;
+      --text:#3A2810; --text2:#6B4E2E; --text3:#9E7A54;
+      --border:rgba(92,61,30,.12); --border2:rgba(92,61,30,.25);
+      --radius:14px; --r-sm:9px;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Prompt', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.75; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Prompt',sans-serif; background:var(--bg); color:var(--text); font-size:16px; line-height:1.8; }
 
     /* ── NAV ── */
-    .nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: .9rem 2rem;
-      background: rgba(14,13,11,.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      position: sticky; top: 0; z-index: 100; gap: 16px;
-    }.nav-logo-img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--border2);
-  flex-shrink: 0;
-}
-    .nav-logo { display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Prompt', sans-serif;
-  color: var(--gold);
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: .5px;
-  line-height: 1.2;
-  white-space: nowrap; }
-    .nav-logo span { display: block; font-size: 9px; color: var(--text3); font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a { color: var(--text2); text-decoration: none; font-size: 12px; letter-spacing: .3px; transition: color .2s; font-weight: 400; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta { background: var(--gold); color: #0E0D0B; border: none; padding: 8px 18px; border-radius: 6px; font-family: 'Prompt', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: background .2s; }
-    .nav-cta:hover { background: var(--gold2); }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; background:rgba(251,247,242,.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border2); position:sticky; top:0; z-index:100; gap:16px; }
+    .nav-logo { color:var(--gold); font-size:1.1rem; font-weight:700; white-space:nowrap; display:flex; align-items:center; gap:10px; }
+    .nav-logo-img { width:38px; height:38px; border-radius:50%; object-fit:cover; border:2px solid var(--border2); flex-shrink:0; }
+    .nav-logo-text span { display:block; font-size:10px; color:var(--text3); font-weight:400; letter-spacing:1.5px; text-transform:uppercase; margin-top:1px; }
+    .nav-links { display:flex; gap:1.2rem; }
+    .nav-links a { color:var(--text2); text-decoration:none; font-size:13px; font-weight:500; transition:color .2s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta { background:var(--gold); color:white; border:none; padding:9px 18px; border-radius:7px; font-family:'Prompt',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:background .2s; white-space:nowrap; }
+    .nav-cta:hover { background:var(--gold2); }
 
     /* ── HERO ── */
-    .hero {
-      min-height: 420px; display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 5rem 2rem 4rem;
-      background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(200,137,58,.1) 0%, transparent 70%), var(--bg);
-      position: relative; overflow: hidden;
-    }
-    .hero-grid-bg {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(200,137,58,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(200,137,58,.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-    }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border2); border-radius: 20px; padding: 4px 14px; font-size: 11px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1.5rem; position: relative; font-weight: 300; }
-    .hero h1 { font-family: 'Prompt', sans-serif; font-size: 3.4rem; font-weight: 700; color: var(--text); line-height: 1.15; margin-bottom: 1rem; position: relative; letter-spacing: .5px; }
-    .hero-sub { font-size: .88rem; color: var(--text2); margin-bottom: 2.5rem; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.9; position: relative; font-weight: 300; }
-    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
-    .btn-gold { background: var(--gold); color: #0E0D0B; border: none; padding: 12px 28px; border-radius: 7px; font-family: 'Prompt', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .2s, transform .15s; }
-    .btn-gold:hover { background: var(--gold2); transform: translateY(-1px); }
-    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); padding: 12px 28px; border-radius: 7px; font-family: 'Prompt', sans-serif; font-size: 13px; font-weight: 400; cursor: pointer; transition: border-color .2s, color .2s; }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero { min-height:440px; display:flex; align-items:center; justify-content:center; text-align:center; padding:5rem 2rem 4rem; background:linear-gradient(160deg,#FBF7F2 0%,#F0E4D0 50%,#E8D5B8 100%); position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 60% at 50% 110%,rgba(160,98,42,.12) 0%,transparent 70%); }
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border2); border-radius:20px; padding:5px 16px; font-size:12px; color:var(--gold); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:1.5rem; position:relative; font-weight:400; background:rgba(255,255,255,.6); }
+    .hero h1 { font-size:3.4rem; font-weight:700; color:var(--brown); line-height:1.15; margin-bottom:1rem; position:relative; }
+    .hero-sub { font-size:1.05rem; color:var(--text2); margin-bottom:2.5rem; max-width:460px; margin-left:auto; margin-right:auto; line-height:1.9; position:relative; font-weight:400; }
+    .hero-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; position:relative; }
+    .btn-gold { background:var(--gold); color:white; border:none; padding:13px 28px; border-radius:8px; font-family:'Prompt',sans-serif; font-size:15px; font-weight:600; cursor:pointer; transition:background .2s,transform .15s; box-shadow:0 4px 16px rgba(160,98,42,.25); }
+    .btn-gold:hover { background:var(--gold2); transform:translateY(-1px); }
+    .btn-outline { background:white; color:var(--brown); border:1.5px solid var(--border2); padding:13px 28px; border-radius:8px; font-family:'Prompt',sans-serif; font-size:15px; font-weight:500; cursor:pointer; transition:all .2s; }
+    .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
 
     /* ── SECTION ── */
-    section { padding: 3rem 2rem; max-width: 960px; margin: 0 auto; }
-    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border2), transparent); margin: 0 2rem; }
-    .sec-eyebrow { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; font-weight: 300; }
-    .sec-title { font-family: 'Prompt', sans-serif; font-size: 2rem; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: .5rem; }
-    .sec-sub { color: var(--text2); font-size: .88rem; margin-bottom: 2.2rem; line-height: 1.8; font-weight: 300; }
+    section { padding:3rem 2rem; max-width:960px; margin:0 auto; }
+    .divider { height:1px; background:linear-gradient(90deg,transparent,var(--border2),transparent); margin:0 2rem; }
+    .sec-eyebrow { font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; font-weight:500; }
+    .sec-title { font-size:2.1rem; font-weight:700; color:var(--brown); line-height:1.2; margin-bottom:.6rem; }
+    .sec-sub { color:var(--text2); font-size:1rem; margin-bottom:2rem; line-height:1.8; font-weight:400; }
 
-    /* ── PRODUCT CARDS ── */
-    .pstack { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-    .pcard { background: var(--bg2); transition: background .2s; }
-    .pcard:not(:last-child) { border-bottom: 1px solid var(--border); }
-    .pcard:hover { background: var(--bg3); }
-    .pcard-header { display: flex; align-items: center; gap: 16px; padding: 1.4rem 1.5rem 1rem; }
-    .pcard-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid var(--border2); }
-    .icon-wood { background: linear-gradient(135deg, #2A1A08, #3D2510); }
-    .icon-upvc { background: #0D1F35; border-color: rgba(100,160,220,.3); }
-    .icon-wpc  { background: #0F2018; border-color: rgba(80,160,110,.3); }
-    .ptag { display: inline-block; font-size: 10px; padding: 2px 10px; border-radius: 20px; font-weight: 500; letter-spacing: .5px; margin-bottom: 4px; border: 1px solid; }
-    .tag-wood { color: #E8AB5A; border-color: rgba(232,171,90,.3); background: rgba(232,171,90,.08); }
-    .tag-upvc { color: #7AB8E8; border-color: rgba(122,184,232,.3); background: rgba(122,184,232,.08); }
-    .tag-wpc  { color: #7ACD78; border-color: rgba(122,205,120,.3); background: rgba(122,205,120,.08); }
-    .pcard-name { font-size: 1rem; font-weight: 600; color: var(--text); line-height: 1.35; }
-    .pcard-body { padding: .25rem 1.5rem 1.5rem; }
-    .pdesc { font-size: 12.5px; color: var(--text2); line-height: 1.8; margin-bottom: 1.1rem; font-weight: 300; }
+    /* ── PRODUCTS ── */
+    .pstack { display:flex; flex-direction:column; gap:12px; }
+    .pcard { background:white; border-radius:var(--radius); border:1px solid var(--border2); transition:box-shadow .2s; box-shadow:0 2px 8px rgba(92,61,30,.06); }
+    .pcard:hover { box-shadow:0 6px 24px rgba(92,61,30,.12); }
+    .pcard-header { display:flex; align-items:center; gap:16px; padding:1.5rem 1.5rem 1rem; }
+    .pcard-icon { width:52px; height:52px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid var(--border2); }
+    .icon-wood  { background:linear-gradient(135deg,#F5E6C8,#E8C88A); }
+    .icon-upvc  { background:linear-gradient(135deg,#D4E8F5,#A8D0EE); }
+    .icon-wpc   { background:linear-gradient(135deg,#D4EDD6,#A8D8AA); }
+    .icon-frame { background:linear-gradient(135deg,#F0E0C8,#D4B890); }
+    .ptag { display:inline-block; font-size:11px; padding:3px 12px; border-radius:20px; font-weight:500; letter-spacing:.3px; margin-bottom:5px; border:1px solid; }
+    .tag-wood  { color:#7A4A0A; border-color:rgba(122,74,10,.3);  background:rgba(122,74,10,.08); }
+    .tag-upvc  { color:#1A5F8A; border-color:rgba(26,95,138,.3);  background:rgba(26,95,138,.08); }
+    .tag-wpc   { color:#1A6B2A; border-color:rgba(26,107,42,.3);  background:rgba(26,107,42,.08); }
+    .tag-frame { color:#8B4513; border-color:rgba(139,69,19,.3);  background:rgba(139,69,19,.08); }
+    .pcard-name { font-size:1.05rem; font-weight:600; color:var(--brown); line-height:1.35; }
+    .pcard-body { padding:.25rem 1.5rem 1.5rem; }
+    .pdesc { font-size:15px; color:var(--text2); line-height:1.85; margin-bottom:1.1rem; font-weight:400; }
+    .wood-grid  { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:1.1rem; }
+    .frame-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:10px; margin-bottom:1.1rem; }
+    .wood-item { background:var(--bg2); border:1px solid var(--border); border-radius:var(--r-sm); padding:.9rem 1rem; }
+    .wood-item-name { font-size:14px; font-weight:600; color:var(--gold); margin-bottom:4px; }
+    .wood-item-desc { font-size:13px; color:var(--text2); line-height:1.65; }
+    .feat-box { background:var(--bg2); border:1px solid var(--border); border-radius:var(--r-sm); padding:1rem 1.2rem; margin-bottom:1rem; }
+    .feat-box-label { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text3); margin-bottom:.6rem; font-weight:500; }
+    .feat-list { display:grid; grid-template-columns:1fr 1fr; gap:5px 16px; }
+    .feat-item { font-size:14px; color:var(--text2); display:flex; align-items:center; gap:7px; }
+    .feat-item::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+    .finish-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:1rem; }
+    .finish-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--r-sm); padding:.85rem 1rem; }
+    .finish-name { font-size:14px; font-weight:600; color:var(--brown); margin-bottom:4px; }
+    .finish-desc { font-size:13px; color:var(--text2); line-height:1.65; }
+    .warn-box { display:flex; align-items:flex-start; gap:9px; background:#FEF4F4; border:1px solid rgba(200,60,60,.2); border-radius:var(--r-sm); padding:.85rem 1.1rem; font-size:14px; color:#9B2A2A; margin-bottom:1rem; line-height:1.65; }
+    .badges { display:flex; gap:7px; flex-wrap:wrap; margin-top:.3rem; }
+    .badge { font-size:12px; padding:4px 12px; border-radius:20px; border:1px solid var(--border2); color:var(--text3); background:var(--bg2); }
+    .badge.g { color:#1A6B2A; border-color:rgba(26,107,42,.25); background:rgba(26,107,42,.06); }
+    .badge.b { color:#1A5F8A; border-color:rgba(26,95,138,.25); background:rgba(26,95,138,.06); }
+    .badge.o { color:#8B4513; border-color:rgba(139,69,19,.25); background:rgba(139,69,19,.06); }
 
-    .wood-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1.1rem; }
-    .wood-item { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r-sm); padding: .9rem 1rem; }
-    .wood-item-name { font-size: 12px; font-weight: 600; color: var(--gold); margin-bottom: 4px; }
-    .wood-item-desc { font-size: 11.5px; color: var(--text2); line-height: 1.6; font-weight: 300; }
+    /* ── CATALOG ── */
+    .catalog-section { background:var(--bg2); padding:3rem 2rem; border-top:1px solid var(--border2); }
+    .catalog-inner { max-width:960px; margin:0 auto; }
+    .catalog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+    .catalog-card { background:white; border:1px solid var(--border2); border-radius:var(--radius); overflow:hidden; transition:box-shadow .2s,transform .2s; cursor:pointer; box-shadow:0 2px 8px rgba(92,61,30,.06); }
+    .catalog-card:hover { box-shadow:0 8px 28px rgba(92,61,30,.14); transform:translateY(-2px); }
+    .catalog-thumb { height:160px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .thumb-wood    { background:linear-gradient(135deg,#F5E6C8,#D4A86A); }
+    .thumb-install { background:linear-gradient(135deg,#E8D5B8,#C4A070); }
+    .thumb-cat-wood{ background:linear-gradient(135deg,#FAEEDA,#E8C070); }
+    .thumb-cat-upvc{ background:linear-gradient(135deg,#D4E8F5,#8FC4E8); }
+    .thumb-cat-std { background:linear-gradient(135deg,#E0EEF8,#A8CCE8); }
+    .catalog-thumb-icon { opacity:.3; }
+    .catalog-badge { position:absolute; top:10px; right:10px; background:var(--gold); color:white; font-size:10px; padding:3px 10px; border-radius:20px; font-weight:600; letter-spacing:.5px; }
+    .catalog-body { padding:1.1rem 1.25rem 1.25rem; }
+    .catalog-name { font-size:15px; font-weight:600; color:var(--brown); margin-bottom:.3rem; line-height:1.35; }
+    .catalog-desc { font-size:13px; color:var(--text2); line-height:1.65; margin-bottom:.9rem; }
+    .catalog-btn { display:inline-flex; align-items:center; gap:6px; background:var(--bg2); border:1px solid var(--border2); color:var(--gold); font-size:12px; font-family:'Prompt',sans-serif; font-weight:500; padding:6px 14px; border-radius:6px; cursor:pointer; transition:all .2s; }
+    .catalog-btn:hover { background:var(--gold); color:white; border-color:var(--gold); }
 
-    .feat-box { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r-sm); padding: .9rem 1.1rem; margin-bottom: 1rem; }
-    .feat-box-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); margin-bottom: .6rem; font-weight: 400; }
-    .feat-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
-    .feat-item { font-size: 12px; color: var(--text2); display: flex; align-items: center; gap: 6px; font-weight: 300; }
-    .feat-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-
-    .finish-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1rem; }
-    .finish-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r-sm); padding: .85rem 1rem; }
-    .finish-card.rec { border-color: rgba(200,137,58,.35); }
-    .finish-name { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-    .finish-desc { font-size: 11.5px; color: var(--text2); line-height: 1.6; font-weight: 300; }
-    .rec-badge { display: inline-block; font-size: 9px; padding: 1px 7px; border-radius: 4px; background: var(--gold); color: #0E0D0B; font-weight: 700; margin-left: 6px; letter-spacing: .5px; }
-
-    .warn-box { display: flex; align-items: flex-start; gap: 8px; background: rgba(226,75,74,.07); border: 1px solid rgba(226,75,74,.2); border-radius: var(--r-sm); padding: .75rem 1rem; font-size: 12px; color: #F09595; margin-bottom: 1rem; line-height: 1.6; font-weight: 300; }
-    .warn-icon { flex-shrink: 0; margin-top: 1px; }
-
-    .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: .2rem; }
-    .badge { font-size: 10px; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--border); color: var(--text3); letter-spacing: .3px; font-weight: 400; }
-    .badge.g { color: #7ACD78; border-color: rgba(122,205,120,.25); }
-    .badge.b { color: #7AB8E8; border-color: rgba(122,184,232,.25); }
+    /* ── VIEWER LIGHTBOX ── */
+    .viewer-overlay { display:none; position:fixed; inset:0; background:rgba(30,20,10,.93); z-index:2000; flex-direction:column; }
+    .viewer-overlay.open { display:flex; }
+    .viewer-header { display:flex; align-items:center; justify-content:space-between; padding:1rem 1.5rem; border-bottom:1px solid rgba(255,255,255,.1); flex-shrink:0; }
+    .viewer-title { color:white; font-size:16px; font-weight:600; }
+    .viewer-close { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:white; width:36px; height:36px; border-radius:8px; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; font-family:'Prompt',sans-serif; transition:background .2s; line-height:1; }
+    .viewer-close:hover { background:rgba(255,255,255,.22); }
+    .viewer-body { flex:1; overflow:hidden; display:flex; align-items:center; justify-content:center; padding:1rem; }
+    .viewer-img-wrap { max-width:100%; max-height:100%; display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+    .viewer-img-wrap img { max-width:100%; max-height:calc(100vh - 170px); object-fit:contain; border-radius:8px; box-shadow:0 8px 40px rgba(0,0,0,.5); }
+    .viewer-iframe { width:100%; height:calc(100vh - 170px); border:none; border-radius:8px; }
+    .viewer-placeholder { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; color:rgba(255,255,255,.45); text-align:center; padding:2rem; }
+    .viewer-placeholder-box { width:80px; height:80px; border:2px dashed rgba(255,255,255,.2); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:2rem; }
+    .viewer-placeholder p { font-size:14px; line-height:1.8; max-width:360px; }
+    .viewer-placeholder code { font-size:12px; background:rgba(255,255,255,.1); padding:2px 8px; border-radius:4px; font-family:monospace; }
+    .viewer-nav { display:flex; align-items:center; justify-content:center; gap:16px; padding:.85rem 1.5rem; border-top:1px solid rgba(255,255,255,.1); flex-shrink:0; }
+    .viewer-nav-btn { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:white; padding:8px 20px; border-radius:8px; font-size:13px; cursor:pointer; font-family:'Prompt',sans-serif; font-weight:500; transition:background .2s; display:flex; align-items:center; gap:6px; }
+    .viewer-nav-btn:hover:not(:disabled) { background:rgba(255,255,255,.2); }
+    .viewer-nav-btn:disabled { opacity:.3; cursor:default; }
+    .viewer-counter { color:rgba(255,255,255,.55); font-size:13px; min-width:80px; text-align:center; }
 
     /* ── GALLERY ── */
-    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .gitem { border-radius: 10px; overflow: hidden; aspect-ratio: 1; position: relative; background: var(--bg3); border: 1px solid var(--border); }
-    .gitem.tall { grid-row: span 2; aspect-ratio: unset; }
-    .gph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text3); font-size: 11px; gap: 6px; font-weight: 300; }
-    /* ใส่รูปจริงได้โดยเพิ่ม: background: url('รูป.jpg') center/cover */
-    .goverlay { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background .2s; display: flex; align-items: flex-end; padding: 8px; }
-    .gitem:hover .goverlay { background: rgba(0,0,0,.4); }
-    .glabel { color: white; font-size: 11px; opacity: 0; transition: opacity .2s; background: rgba(200,137,58,.7); padding: 2px 8px; border-radius: 4px; font-weight: 500; }
-    .gitem:hover .glabel { opacity: 1; }
-
-    /* ── VIDEO ── */
-    .video-section { background: var(--bg2); padding: 3rem 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .video-inner { max-width: 960px; margin: 0 auto; }
-    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .vcard { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color .2s; }
-    .vcard:hover { border-color: var(--border2); }
-    .vthumb { height: 150px; display: flex; align-items: center; justify-content: center; position: relative; }
-    .vthumb.tt { background: linear-gradient(135deg, #080808, #1a1a1a); }
-    .vthumb.fb { background: linear-gradient(135deg, #06101F, #0D2040); }
-    .vplay { width: 44px; height: 44px; background: rgba(200,137,58,.15); border: 1px solid rgba(200,137,58,.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s; }
-    .vcard:hover .vplay { background: rgba(200,137,58,.25); }
-    .vbadge { position: absolute; top: 10px; left: 10px; padding: 3px 10px; border-radius: 5px; font-size: 10px; font-weight: 500; color: white; letter-spacing: .5px; }
-    .vbadge.tt { background: #111; border: 1px solid #333; }
-    .vbadge.fb { background: #1877F2; }
-    .vbody { padding: 1rem 1.25rem; }
-    .vtitle { font-size: 12.5px; color: var(--text); margin-bottom: .5rem; line-height: 1.5; font-weight: 500; }
-    .vlink { display: inline-flex; align-items: center; gap: 5px; color: var(--gold); font-size: 11.5px; text-decoration: none; transition: color .2s; font-weight: 300; }
-    .vlink:hover { color: var(--gold2); }
+    .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .gitem { border-radius:12px; overflow:hidden; aspect-ratio:1; position:relative; background:var(--bg3); border:1px solid var(--border2); }
+    .gitem.tall { grid-row:span 2; aspect-ratio:unset; }
+    .gph { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--text3); font-size:13px; gap:7px; }
+    .goverlay { position:absolute; inset:0; background:rgba(0,0,0,0); transition:background .2s; display:flex; align-items:flex-end; padding:10px; }
+    .gitem:hover .goverlay { background:rgba(0,0,0,.3); }
+    .glabel { color:white; font-size:12px; opacity:0; transition:opacity .2s; background:rgba(160,98,42,.8); padding:3px 10px; border-radius:5px; font-weight:500; }
+    .gitem:hover .glabel { opacity:1; }
 
     /* ── SERVICE ── */
-    .service-section { background: var(--bg2); padding: 3rem 2rem; border-top: 1px solid var(--border); }
-    .service-inner { max-width: 960px; margin: 0 auto; }
-    .hours-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.8rem; }
-    .hours-chip { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 8px 16px; }
-    .hours-chip strong { font-size: 10px; color: var(--gold); display: block; letter-spacing: .5px; margin-bottom: 2px; text-transform: uppercase; font-weight: 500; }
-    .hours-chip span { font-size: 13px; color: var(--text); font-weight: 400; }
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-    .scard { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: border-color .2s; }
-    .scard:hover { border-color: var(--border2); }
-    .scard-icon { font-size: 1.4rem; margin-bottom: .7rem; }
-    .scard-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: .35rem; }
-    .scard-desc { font-size: 12px; color: var(--text2); line-height: 1.65; font-weight: 300; }
-    .note-strip { background: rgba(200,137,58,.07); border: 1px solid rgba(200,137,58,.2); border-radius: var(--r-sm); padding: 7px 11px; font-size: 11.5px; color: var(--gold); margin-top: .75rem; line-height: 1.6; font-weight: 300; }
+    .service-section { background:var(--bg2); padding:3rem 2rem; border-top:1px solid var(--border2); }
+    .service-inner { max-width:960px; margin:0 auto; }
+    .hours-row { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:1.8rem; }
+    .hours-chip { background:white; border:1px solid var(--border2); border-radius:var(--r-sm); padding:10px 18px; box-shadow:0 1px 4px rgba(92,61,30,.06); }
+    .hours-chip strong { font-size:11px; color:var(--gold); display:block; letter-spacing:.5px; margin-bottom:3px; text-transform:uppercase; font-weight:600; }
+    .hours-chip span { font-size:15px; color:var(--brown); font-weight:500; }
+    .service-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; }
+    .scard { background:white; border:1px solid var(--border2); border-radius:var(--radius); padding:1.4rem; transition:box-shadow .2s; box-shadow:0 2px 8px rgba(92,61,30,.06); }
+    .scard:hover { box-shadow:0 6px 20px rgba(92,61,30,.12); }
+    .scard-icon { font-size:1.5rem; margin-bottom:.7rem; }
+    .scard-title { font-size:15px; font-weight:600; color:var(--brown); margin-bottom:.35rem; }
+    .scard-desc { font-size:14px; color:var(--text2); line-height:1.75; }
+    .note-strip { background:#FEF8EE; border:1px solid rgba(160,98,42,.25); border-radius:var(--r-sm); padding:8px 12px; font-size:13px; color:var(--gold); margin-top:.75rem; line-height:1.65; }
 
     /* ── CONTACT ── */
-    .contact-section { background: linear-gradient(135deg, var(--bg2), var(--bg3)); padding: 3rem 2rem; border-top: 1px solid var(--border); }
-    .contact-inner { max-width: 960px; margin: 0 auto; }
-    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
-    .ccard { background: rgba(200,137,58,.05); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; display: flex; align-items: flex-start; gap: 12px; text-decoration: none; transition: border-color .2s, background .2s; }
-    .ccard:hover { border-color: var(--border2); background: rgba(200,137,58,.09); }
-    .cicon { width: 36px; height: 36px; background: rgba(200,137,58,.15); border: 1px solid rgba(200,137,58,.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .95rem; flex-shrink: 0; }
-    .clabel { font-size: 10px; color: var(--text3); margin-bottom: 2px; letter-spacing: .5px; text-transform: uppercase; font-weight: 300; }
-    .cval { font-size: 13px; color: var(--text); font-weight: 500; line-height: 1.5; }
-    .social-row { display: flex; gap: 10px; flex-wrap: wrap; }
-    .sbtn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px; border-radius: 7px; font-size: 12px; font-family: 'Prompt', sans-serif; font-weight: 500; text-decoration: none; transition: opacity .2s; }
-    .sbtn:hover { opacity: .85; }
-    .sbtn.line { background: #06C755; color: white; }
-    .sbtn.fb   { background: #1877F2; color: white; }
-    .sbtn.tt   { background: #111; color: white; border: 1px solid #333; }
-
-    .footer { text-align: center; padding: 1.5rem 2rem; font-size: 11px; color: var(--text3); border-top: 1px solid var(--border); letter-spacing: .5px; background: var(--bg); font-weight: 300; }
+    .contact-section { background:linear-gradient(135deg,#3A2810,#5C3D1E); padding:3rem 2rem; border-top:1px solid var(--border2); }
+    .contact-inner { max-width:960px; margin:0 auto; }
+    .contact-section .sec-eyebrow { color:var(--gold2); }
+    .contact-section .sec-title { color:#FBF7F2; }
+    .contact-section .sec-sub { color:rgba(251,247,242,.65); }
+    .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-bottom:1.5rem; }
+    .ccard { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:var(--radius); padding:1.1rem 1.2rem; display:flex; align-items:flex-start; gap:12px; text-decoration:none; transition:background .2s; }
+    .ccard:hover { background:rgba(255,255,255,.14); }
+    .cicon { width:38px; height:38px; background:rgba(160,98,42,.3); border:1px solid rgba(160,98,42,.4); border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+    .clabel { font-size:11px; color:rgba(251,247,242,.45); margin-bottom:3px; letter-spacing:.5px; text-transform:uppercase; }
+    .cval { font-size:14px; color:#FBF7F2; font-weight:500; line-height:1.5; }
+    .social-row { display:flex; gap:10px; flex-wrap:wrap; }
+    .sbtn { display:inline-flex; align-items:center; gap:7px; padding:10px 18px; border-radius:7px; font-size:14px; font-family:'Prompt',sans-serif; font-weight:500; text-decoration:none; transition:opacity .2s; }
+    .sbtn:hover { opacity:.85; }
+    .sbtn.line { background:#06C755; color:white; }
+    .sbtn.fb   { background:#1877F2; color:white; }
+    .sbtn.tt   { background:#222; color:white; border:1px solid #444; }
+    .footer { text-align:center; padding:1.5rem 2rem; font-size:13px; color:var(--text3); border-top:1px solid var(--border2); background:var(--bg2); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .nav-links { display: none; }
-      .hero h1 { font-size: 2.4rem; }
-      .wood-grid { grid-template-columns: 1fr; }
-      .finish-row { grid-template-columns: 1fr; }
-      .feat-list { grid-template-columns: 1fr; }
-      .video-grid { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .gitem.tall { grid-row: span 1; aspect-ratio: 1; }
+    @media (max-width:600px) {
+      .nav-links { display:none; }
+      .hero h1 { font-size:2.4rem; }
+      .wood-grid { grid-template-columns:1fr; }
+      .finish-row { grid-template-columns:1fr; }
+      .feat-list { grid-template-columns:1fr; }
+      .gallery-grid { grid-template-columns:repeat(2,1fr); }
+      .gitem.tall { grid-row:span 1; aspect-ratio:1; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ══ LIGHTBOX VIEWER ══ -->
+<div class="viewer-overlay" id="viewer">
+  <div class="viewer-header">
+    <div class="viewer-title" id="viewer-title">แคตตาล็อก</div>
+    <button class="viewer-close" onclick="closeViewer()">✕</button>
+  </div>
+  <div class="viewer-body">
+    <div class="viewer-img-wrap" id="viewer-wrap">
+      <div class="viewer-placeholder" id="viewer-placeholder">
+        <div class="viewer-placeholder-box">🖼</div>
+        <p>ยังไม่มีรูปภาพในหมวดนี้<br><br>
+        วิธีเพิ่มรูป: เปิดไฟล์ <code>index.html</code> ใน VS Code<br>
+        หาคำว่า <code>const catalogs</code> แล้วเพิ่ม path รูปในอาร์เรย์ <code>images</code> ของแต่ละเมนูได้เลยค่ะ</p>
+      </div>
+    </div>
+  </div>
+  <div class="viewer-nav">
+    <button class="viewer-nav-btn" id="btn-prev" onclick="changeSlide(-1)" disabled>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      ก่อนหน้า
+    </button>
+    <div class="viewer-counter" id="viewer-counter">— / —</div>
+    <button class="viewer-nav-btn" id="btn-next" onclick="changeSlide(1)" disabled>
+      ถัดไป
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
 <nav class="nav">
   <div class="nav-logo">
-  <img src="klangsoiwoodwork-logo.png" class="nav-logo-img" alt="logo" />
-  -กลางซอยค้าไม้-
-    <span>ประตู · วงกบ · หน้าต่าง · uPVC</span>
+    <img src="klangsoiwoodwork-logo.png" class="nav-logo-img" alt="โลโก้กลางซอยค้าไม้" onerror="this.style.display='none'" />
+    <div class="nav-logo-text">
+      -กลางซอยค้าไม้-
+      <span>ประตู · วงกบ · หน้าต่าง · uPVC</span>
+    </div>
   </div>
   <div class="nav-links">
     <a href="#products">สินค้า</a>
+    <a href="#catalog">แคตตาล็อก</a>
     <a href="#gallery">ผลงาน</a>
-    <a href="#videos">วีดีโอ</a>
     <a href="#service">บริการ</a>
     <a href="#contact">ติดต่อ</a>
   </div>
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">สอบถามราคา</button>
 </nav>
 
-<!-- HERO -->
+<!-- ══ HERO ══ -->
 <div class="hero">
-  <div class="hero-grid-bg"></div>
   <div>
     <div class="hero-eyebrow">ประตู · วงกบ · หน้าต่าง · uPVC</div>
     <h1>-กลางซอยค้าไม้-</h1>
-    <p class="hero-sub">ไม้จริง · uPVC · WPC<br>ช่างมีประสบการณ์ ติดตั้งถึงบ้าน</p>
+    <p class="hero-sub">จำหน่ายและติดตั้งประตูไม้จริง · uPVC · WPC<br>ด้วยทีมช่างผู้มีประสบการณ์ พร้อมบริการถึงบ้าน</p>
     <div class="hero-btns">
       <button class="btn-gold" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">ดูสินค้าทั้งหมด</button>
       <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">ขอใบเสนอราคา</button>
@@ -244,24 +250,18 @@
   </div>
 </div>
 
-<!-- PRODUCTS -->
+<!-- ══ PRODUCTS ══ -->
 <section id="products">
   <div class="sec-eyebrow">สินค้าของเรา</div>
-  <div class="sec-title">เลือกตามการใช้งาน</div>
-  <div class="sec-sub">แต่ละวัสดุเหมาะกับงานต่างกัน ทักมาถามได้เลยถ้าไม่แน่ใจ</div>
-
+  <div class="sec-title">เลือกวัสดุให้เหมาะกับการใช้งาน</div>
+  <div class="sec-sub">แต่ละวัสดุมีจุดเด่นที่แตกต่างกัน หากยังไม่แน่ใจว่าแบบใดเหมาะสม ทักมาปรึกษาได้เลยค่ะ</div>
   <div class="pstack">
 
-    <!-- WOOD -->
+    <!-- ประตูไม้จริง -->
     <div class="pcard">
       <div class="pcard-header">
         <div class="pcard-icon icon-wood">
-          <svg width="26" height="38" viewBox="0 0 30 44">
-            <rect x="1" y="1" width="28" height="42" rx="3" fill="#C4883A" opacity=".7"/>
-            <rect x="4" y="5" width="22" height="14" rx="1.5" fill="#E8AB5A" opacity=".4"/>
-            <rect x="4" y="23" width="22" height="14" rx="1.5" fill="#E8AB5A" opacity=".4"/>
-            <circle cx="24" cy="22" r="2.5" fill="#E8AB5A"/>
-          </svg>
+          <svg width="28" height="40" viewBox="0 0 30 44"><rect x="1" y="1" width="28" height="42" rx="3" fill="#A0622A" opacity=".8"/><rect x="4" y="5" width="22" height="14" rx="1.5" fill="#C4813E" opacity=".5"/><rect x="4" y="23" width="22" height="14" rx="1.5" fill="#C4813E" opacity=".5"/><circle cx="24" cy="22" r="2.5" fill="#7A4A0A"/></svg>
         </div>
         <div>
           <div><span class="ptag tag-wood">ประตูไม้จริง</span></div>
@@ -269,124 +269,129 @@
         </div>
       </div>
       <div class="pcard-body">
-        <div class="pdesc">ไม้จริงให้ความอบอุ่นและเอกลักษณ์ที่วัสดุอื่นทดแทนไม่ได้ แต่ละชนิดมีคุณสมบัติและราคาต่างกัน ควรเลือกให้เหมาะกับตำแหน่งที่ใช้งาน</div>
+        <div class="pdesc">ประตูไม้จริงมอบความอบอุ่นและเอกลักษณ์ที่วัสดุชนิดอื่นไม่สามารถทดแทนได้ แต่ละชนิดมีคุณสมบัติและช่วงราคาที่แตกต่างกัน ควรเลือกให้เหมาะสมกับตำแหน่งและการใช้งาน</div>
         <div class="wood-grid">
           <div class="wood-item">
             <div class="wood-item-name">ไม้สะเดา</div>
-            <div class="wood-item-desc">เนื้อแข็งปานกลาง มียางธรรมชาติป้องกันปลวก ย้อมสีง่าย เหมาะงานภายใน ราคาเข้าถึงง่าย</div>
+            <div class="wood-item-desc">เนื้อไม้แข็งปานกลาง มีน้ำยางธรรมชาติที่ช่วยป้องกันปลวกได้ดี ทำสีได้ตามต้องการ ราคาเข้าถึงได้ง่าย เหมาะสำหรับงานภายในอาคาร</div>
           </div>
           <div class="wood-item">
             <div class="wood-item-name">ไม้ตะแบก</div>
-            <div class="wood-item-desc">ลายเส้นตรงสวยคล้ายไม้สัก ย้อมสีได้ตามต้องการ อ่อนไหวต่อความชื้น เหมาะงานภายใน</div>
+            <div class="wood-item-desc">เนื้อไม้มีลายเส้นตรงสวยงามคล้ายไม้สัก ทำสีได้ตามต้องการ มีความแข็งแรงทนทาน เหมาะสำหรับงานภายในและภายนอกอาคาร</div>
           </div>
           <div class="wood-item">
             <div class="wood-item-name">ไม้สัก</div>
-            <div class="wood-item-desc">ทนทานสูงสุด ผลิตน้ำมันธรรมชาติป้องกันปลวก ใช้ได้ทั้งในและนอก ราคาสูงกว่าชนิดอื่น</div>
+            <div class="wood-item-desc">ไม้คุณภาพสูงที่มีความทนทานยอดเยี่ยม ผลิตน้ำมันธรรมชาติป้องกันปลวกในตัว เหมาะสำหรับทั้งงานภายในและภายนอก ราคาสูงกว่าไม้ชนิดอื่น</div>
           </div>
         </div>
         <div class="badges">
-          <span class="badge">ย้อมสีได้ทุกแบบ</span>
-          <span class="badge">แกะสลักตามสั่ง</span>
-          <span class="badge g">ปลวกไม่กิน</span>
-          <span class="badge">เหมาะงานภายใน</span>
+          <span class="badge">ทำสีได้ทุกเฉดสี</span>
+          <span class="badge">แกะสลักลวดลายตามสั่ง</span>
+          <span class="badge g">ป้องกันปลวกตามธรรมชาติ</span>
         </div>
       </div>
     </div>
 
-    <!-- UPVC -->
+    <!-- ประตู uPVC -->
     <div class="pcard">
       <div class="pcard-header">
         <div class="pcard-icon icon-upvc">
-          <svg width="28" height="40" viewBox="0 0 28 40">
-            <rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#4A9FD8" stroke-width="1.5"/>
-            <rect x="5" y="5" width="18" height="30" rx="1.5" fill="#4A9FD8" opacity=".08"/>
-            <line x1="14" y1="5" x2="14" y2="35" stroke="#4A9FD8" stroke-width="1" opacity=".4"/>
-            <circle cx="21" cy="20" r="2" fill="none" stroke="#4A9FD8" stroke-width="1.2"/>
-            <circle cx="21" cy="20" r=".6" fill="#4A9FD8"/>
-          </svg>
+          <svg width="28" height="40" viewBox="0 0 28 40"><rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#1A5F8A" stroke-width="1.5"/><rect x="5" y="5" width="18" height="30" rx="1.5" fill="#1A5F8A" opacity=".08"/><line x1="14" y1="5" x2="14" y2="35" stroke="#1A5F8A" stroke-width="1" opacity=".4"/><circle cx="21" cy="20" r="2" fill="none" stroke="#1A5F8A" stroke-width="1.2"/><circle cx="21" cy="20" r=".6" fill="#1A5F8A"/></svg>
         </div>
         <div>
           <div><span class="ptag tag-upvc">ประตู uPVC</span></div>
-          <div class="pcard-name">ประตู uPVC — ทนน้ำ ทนชื้น เหมาะภายใน</div>
+          <div class="pcard-name">ประตู uPVC — ทนน้ำ ทนความชื้น เหมาะสำหรับงานภายใน</div>
         </div>
       </div>
       <div class="pcard-body">
-        <div class="warn-box"><span class="warn-icon">⚠</span> ไม่เหมาะกับพื้นที่โดนแดดโดยตรง มีโอกาสโก่งตัวสูง แนะนำให้ใช้ภายในอาคารเท่านั้น</div>
+        <div class="warn-box"><span>⚠</span> ไม่เหมาะสำหรับพื้นที่ที่ได้รับแสงแดดโดยตรง เนื่องจากมีโอกาสเกิดการโก่งตัวสูง แนะนำให้ติดตั้งภายในอาคารเท่านั้น</div>
         <div class="feat-box">
           <div class="feat-box-label">คุณสมบัติหลัก</div>
           <div class="feat-list">
-            <div class="feat-item">กันน้ำ ทนความชื้นสูง</div>
-            <div class="feat-item">ทนปลวก มอด แมลง</div>
-            <div class="feat-item">ไม่ผุ ไม่บวม ดูแลง่าย</div>
-            <div class="feat-item">น้ำหนักเบา ติดตั้งง่าย</div>
+            <div class="feat-item">กันน้ำและทนความชื้นได้ดีเยี่ยม</div>
+            <div class="feat-item">ทนต่อปลวก มอด และแมลง</div>
+            <div class="feat-item">ไม่ผุ ไม่บวม ดูแลรักษาง่าย</div>
+            <div class="feat-item">น้ำหนักเบา ติดตั้งสะดวกรวดเร็ว</div>
           </div>
         </div>
         <div class="finish-row">
           <div class="finish-card">
             <div class="finish-name">รุ่นพ่นสีอุตสาหกรรม</div>
-            <div class="finish-desc">เลือกสีได้ตามต้องการ ผิวเรียบสม่ำเสมอ สัมผัสเป็นพลาสติก ไม่มีลายไม้</div>
+            <div class="finish-desc">เลือกเฉดสีได้ตามต้องการ ผิวสัมผัสเรียบเนียนสม่ำเสมอ ให้ความรู้สึกเป็นวัสดุสังเคราะห์ ไม่มีลวดลายไม้</div>
           </div>
-          <div class="finish-card rec">
-            <div class="finish-name">รุ่นปิดผิวลายไม้ <span class="rec-badge">แนะนำ</span></div>
-            <div class="finish-desc">ผิวลายเสี้ยนไม้ ให้ความรู้สึกใกล้เคียงไม้จริง เหมาะสำหรับผู้ที่ต้องการความสวยงาม</div>
+          <div class="finish-card">
+            <div class="finish-name">รุ่นปิดผิวลายไม้</div>
+            <div class="finish-desc">ผิวหน้าพิมพ์ลายเสี้ยนไม้ธรรมชาติ ให้ความรู้สึกใกล้เคียงไม้จริงมากกว่า เหมาะสำหรับผู้ที่ต้องการความสวยงาม</div>
           </div>
         </div>
         <div class="badges">
-          <span class="badge b">ห้องน้ำ</span>
-          <span class="badge b">ห้องนอน</span>
-          <span class="badge b">ภายในอาคาร</span>
-          <span class="badge g">กันน้ำ</span>
-          <span class="badge g">ทนปลวก</span>
+          <span class="badge b">ห้องน้ำ</span><span class="badge b">ห้องนอน</span><span class="badge b">ภายในอาคาร</span><span class="badge g">กันน้ำ 100%</span><span class="badge g">ทนปลวก</span>
         </div>
       </div>
     </div>
 
-    <!-- WPC -->
+    <!-- ประตู WPC -->
     <div class="pcard">
       <div class="pcard-header">
         <div class="pcard-icon icon-wpc">
-          <svg width="28" height="40" viewBox="0 0 28 40">
-            <rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#52B86A" stroke-width="1.5"/>
-            <rect x="5" y="5" width="18" height="30" rx="1.5" fill="#52B86A" opacity=".08"/>
-            <line x1="5" y1="12" x2="23" y2="12" stroke="#52B86A" stroke-width="1" opacity=".5"/>
-            <line x1="5" y1="19" x2="23" y2="19" stroke="#52B86A" stroke-width="1" opacity=".5"/>
-            <line x1="5" y1="26" x2="23" y2="26" stroke="#52B86A" stroke-width="1" opacity=".5"/>
-            <circle cx="21" cy="20" r="2" fill="none" stroke="#52B86A" stroke-width="1.2"/>
-            <circle cx="21" cy="20" r=".6" fill="#52B86A"/>
-          </svg>
+          <svg width="28" height="40" viewBox="0 0 28 40"><rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#1A6B2A" stroke-width="1.5"/><rect x="5" y="5" width="18" height="30" rx="1.5" fill="#1A6B2A" opacity=".08"/><line x1="5" y1="12" x2="23" y2="12" stroke="#1A6B2A" stroke-width="1" opacity=".5"/><line x1="5" y1="19" x2="23" y2="19" stroke="#1A6B2A" stroke-width="1" opacity=".5"/><line x1="5" y1="26" x2="23" y2="26" stroke="#1A6B2A" stroke-width="1" opacity=".5"/><circle cx="21" cy="20" r="2" fill="none" stroke="#1A6B2A" stroke-width="1.2"/><circle cx="21" cy="20" r=".6" fill="#1A6B2A"/></svg>
         </div>
         <div>
           <div><span class="ptag tag-wpc">ประตู WPC</span></div>
-          <div class="pcard-name">ประตู WPC — ทนน้ำ ทนชื้น เหมาะภายใน</div>
+          <div class="pcard-name">ประตู WPC — ทนน้ำ ทนความชื้น เหมาะสำหรับงานภายใน</div>
         </div>
       </div>
       <div class="pcard-body">
-        <div class="warn-box"><span class="warn-icon">⚠</span> ไม่เหมาะกับพื้นที่โดนแดดโดยตรง มีโอกาสโก่งตัวสูง แนะนำให้ใช้ภายในอาคารเท่านั้น</div>
+        <div class="warn-box"><span>⚠</span> ไม่เหมาะสำหรับพื้นที่ที่ได้รับแสงแดดโดยตรง เนื่องจากมีโอกาสเกิดการโก่งตัวสูง แนะนำให้ติดตั้งภายในอาคารเท่านั้น</div>
         <div class="feat-box">
           <div class="feat-box-label">คุณสมบัติหลัก</div>
           <div class="feat-list">
-            <div class="feat-item">กันน้ำ ทนความชื้นสูง</div>
-            <div class="feat-item">ทนปลวก มอด แมลง</div>
-            <div class="feat-item">ไม่ผุ ไม่บวม ดูแลง่าย</div>
-            <div class="feat-item">น้ำหนักเบา ติดตั้งง่าย</div>
+            <div class="feat-item">กันน้ำและทนความชื้นได้ดีเยี่ยม</div>
+            <div class="feat-item">ทนต่อปลวก มอด และแมลง</div>
+            <div class="feat-item">ไม่ผุ ไม่บวม ดูแลรักษาง่าย</div>
+            <div class="feat-item">น้ำหนักเบา ติดตั้งสะดวกรวดเร็ว</div>
           </div>
         </div>
         <div class="finish-row">
           <div class="finish-card">
             <div class="finish-name">รุ่นพ่นสีอุตสาหกรรม</div>
-            <div class="finish-desc">เลือกสีได้ตามต้องการ ผิวเรียบสม่ำเสมอ สัมผัสเป็นพลาสติก ไม่มีลายไม้</div>
+            <div class="finish-desc">เลือกเฉดสีได้ตามต้องการ ผิวสัมผัสเรียบเนียนสม่ำเสมอ ให้ความรู้สึกเป็นวัสดุสังเคราะห์ ไม่มีลวดลายไม้</div>
           </div>
-          <div class="finish-card rec">
-            <div class="finish-name">รุ่นปิดผิวลายไม้ <span class="rec-badge">แนะนำ</span></div>
-            <div class="finish-desc">ผิวลายเสี้ยนไม้ ให้ความรู้สึกใกล้เคียงไม้จริง เหมาะสำหรับผู้ที่ต้องการความสวยงาม</div>
+          <div class="finish-card">
+            <div class="finish-name">รุ่นปิดผิวลายไม้</div>
+            <div class="finish-desc">ผิวหน้าพิมพ์ลายเสี้ยนไม้ธรรมชาติ ให้ความรู้สึกใกล้เคียงไม้จริงมากกว่า เหมาะสำหรับผู้ที่ต้องการความสวยงาม</div>
           </div>
         </div>
         <div class="badges">
-          <span class="badge b">ห้องน้ำ</span>
-          <span class="badge b">ห้องนอน</span>
-          <span class="badge b">ภายในอาคาร</span>
-          <span class="badge g">กันน้ำ</span>
-          <span class="badge g">ทนปลวก</span>
+          <span class="badge b">ห้องน้ำ</span><span class="badge b">ห้องนอน</span><span class="badge b">ภายในอาคาร</span><span class="badge g">กันน้ำ 100%</span><span class="badge g">ทนปลวก</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- วงกบ -->
+    <div class="pcard">
+      <div class="pcard-header">
+        <div class="pcard-icon icon-frame">
+          <svg width="28" height="40" viewBox="0 0 28 40"><rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#8B4513" stroke-width="1.8"/><rect x="5" y="5" width="18" height="30" rx="1" fill="none" stroke="#8B4513" stroke-width="1.2" opacity=".5"/><rect x="9" y="9" width="10" height="22" rx="1" fill="#8B4513" opacity=".1"/><line x1="1" y1="20" x2="5" y2="20" stroke="#8B4513" stroke-width="1.5" opacity=".6"/><line x1="23" y1="20" x2="27" y2="20" stroke="#8B4513" stroke-width="1.5" opacity=".6"/></svg>
+        </div>
+        <div>
+          <div><span class="ptag tag-frame">วงกบประตู</span></div>
+          <div class="pcard-name">วงกบประตู — ไม้จริงและ WPC คุณภาพสูง</div>
+        </div>
+      </div>
+      <div class="pcard-body">
+        <div class="pdesc">วงกบที่แข็งแรงและได้มาตรฐานถือเป็นองค์ประกอบสำคัญที่ช่วยให้การติดตั้งประตูมีความมั่นคงและใช้งานได้ยาวนาน เรามีให้เลือกทั้งวงกบไม้จริงหลายชนิด และวงกบ WPC สำหรับบานประตู uPVC และ WPC หรือพื้นที่ที่มีความชื้นสูง</div>
+        <div class="frame-grid">
+          <div class="wood-item"><div class="wood-item-name">วงกบไม้สะเดา</div><div class="wood-item-desc">เนื้อไม้แข็งปานกลาง มีน้ำยางธรรมชาติป้องกันปลวก ราคาประหยัด เหมาะสำหรับงานภายในทั่วไป</div></div>
+          <div class="wood-item"><div class="wood-item-name">วงกบไม้พลวง</div><div class="wood-item-desc">เนื้อไม้หนักแน่น ความแข็งแรงสูง ทนทานต่อแรงกระแทกได้ดี เหมาะสำหรับประตูทางเข้าหลัก</div></div>
+          <div class="wood-item"><div class="wood-item-name">วงกบไม้เต็ง</div><div class="wood-item-desc">ไม้เนื้อแข็งคุณภาพสูง ทนต่อการบิดตัวและสภาพอากาศ เหมาะสำหรับงานที่ต้องการความแข็งแรงเป็นพิเศษ</div></div>
+          <div class="wood-item"><div class="wood-item-name">วงกบไม้แดง</div><div class="wood-item-desc">เนื้อไม้สีแดงอมน้ำตาล ลายสวยงาม ความแข็งแรงดี เหมาะสำหรับงานที่ต้องการทั้งความแข็งแรงและความสวยงาม</div></div>
+          <div class="wood-item"><div class="wood-item-name">วงกบ WPC</div><div class="wood-item-desc">วัสดุผสมไม้และพลาสติก กันน้ำ ทนปลวก ไม่ผุ เหมาะสำหรับใช้คู่กับบานประตู uPVC และ WPC หรือพื้นที่ที่มีความชื้นสูง</div></div>
+        </div>
+        <div class="badges">
+          <span class="badge o">ใช้คู่กับประตูทุกชนิด</span>
+          <span class="badge g">วงกบ WPC กันน้ำ</span>
+          <span class="badge">สั่งทำตามขนาด</span>
         </div>
       </div>
     </div>
@@ -396,90 +401,117 @@
 
 <div class="divider"></div>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="sec-eyebrow">ผลงานของเรา</div>
-  <div class="sec-title">ตัวอย่างงานติดตั้งจริง</div>
-  <div class="sec-sub">วางรูปจริงโดยแก้ไข CSS ของแต่ละช่อง เพิ่ม background-image: url('ชื่อรูป.jpg')</div>
-  <div class="gallery-grid">
-    <!-- เปลี่ยนรูปได้โดยเพิ่ม style="background:url('รูป.jpg') center/cover" ใน div.gitem -->
-    <div class="gitem tall">
-      <div class="gph">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        ประตูไม้จริง
-      </div>
-      <div class="goverlay"><span class="glabel">ประตูไม้จริง</span></div>
-    </div>
-    <div class="gitem">
-      <div class="gph"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>ประตู uPVC</div>
-      <div class="goverlay"><span class="glabel">ประตู uPVC</span></div>
-    </div>
-    <div class="gitem">
-      <div class="gph"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>ประตู WPC</div>
-      <div class="goverlay"><span class="glabel">ประตู WPC</span></div>
-    </div>
-    <div class="gitem">
-      <div class="gph"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>วงกบ</div>
-      <div class="goverlay"><span class="glabel">วงกบ</span></div>
-    </div>
-    <div class="gitem">
-      <div class="gph"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>หน้าต่าง</div>
-      <div class="goverlay"><span class="glabel">หน้าต่าง</span></div>
-    </div>
-    <div class="gitem">
-      <div class="gph"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>งานติดตั้ง</div>
-      <div class="goverlay"><span class="glabel">งานติดตั้ง</span></div>
-    </div>
-  </div>
-</section>
+<!-- ══ CATALOG ══ -->
+<div class="catalog-section" id="catalog">
+  <div class="catalog-inner">
+    <div class="sec-eyebrow">แคตตาล็อกและผลงาน</div>
+    <div class="sec-title">เลือกชมได้เลยค่ะ</div>
+    <div class="sec-sub">กดที่การ์ดเพื่อเปิดดูรูปภาพหรือแคตตาล็อก สามารถเลื่อนดูทีละหน้าได้เลย</div>
+    <div class="catalog-grid">
 
-<!-- VIDEO -->
-<div class="video-section" id="videos">
-  <div class="video-inner">
-    <div class="sec-eyebrow" style="color:var(--gold)">วีดีโอ</div>
-    <div class="sec-title">ดูผลงานเพิ่มเติม</div>
-    <div class="sec-sub">ติดตามได้ทั้ง TikTok และ Facebook อัปเดตทุกวัน</div>
-    <div class="video-grid">
-      <div class="vcard">
-        <div class="vthumb tt">
-          <span class="vbadge tt">TikTok</span>
-          <div class="vplay">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#C8893A"><path d="M8 5v14l11-7z"/></svg>
-          </div>
+      <div class="catalog-card" onclick="openViewer('wood-gallery')">
+        <div class="catalog-thumb thumb-wood">
+          <svg class="catalog-thumb-icon" width="60" height="86" viewBox="0 0 30 44"><rect x="1" y="1" width="28" height="42" rx="3" fill="#8B5E2A"/><rect x="4" y="5" width="22" height="14" rx="1.5" fill="#C4883A"/><rect x="4" y="23" width="22" height="14" rx="1.5" fill="#C4883A"/><circle cx="24" cy="22" r="3" fill="#6B3F1A"/></svg>
+          <div class="catalog-badge">รูปภาพ</div>
         </div>
-        <div class="vbody">
-          <div class="vtitle">ผลงานและสินค้าจากร้านกลางซอยค้าไม้</div>
-          <a class="vlink" href="https://www.tiktok.com/@klangsoiwoodwork" target="_blank" rel="noopener">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            @klangsoiwoodwork
-          </a>
+        <div class="catalog-body">
+          <div class="catalog-name">รวมงานประตูไม้จริง</div>
+          <div class="catalog-desc">รวมภาพผลงานประตูไม้จริงทุกชนิด สัก ตะแบก สะเดา พร้อมรายละเอียดการตกแต่ง</div>
+          <button class="catalog-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            ดูรูปภาพ
+          </button>
         </div>
       </div>
-      <div class="vcard">
-        <div class="vthumb fb">
-          <span class="vbadge fb">Facebook</span>
-          <div class="vplay">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#C8893A"><path d="M8 5v14l11-7z"/></svg>
-          </div>
+
+      <div class="catalog-card" onclick="openViewer('install-gallery')">
+        <div class="catalog-thumb thumb-install">
+          <svg class="catalog-thumb-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#7A5230" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          <div class="catalog-badge">รูปภาพ</div>
         </div>
-        <div class="vbody">
-          <div class="vtitle">กลางซอยค้าไม้ : ประตู วงกบ หน้าต่าง uPVC</div>
-          <a class="vlink" href="https://www.facebook.com/search/top?q=กลางซอยค้าไม้" target="_blank" rel="noopener">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            ดูบน Facebook
-          </a>
+        <div class="catalog-body">
+          <div class="catalog-name">รวมผลงานการติดตั้ง</div>
+          <div class="catalog-desc">ตัวอย่างงานติดตั้งจริงโดยทีมช่างของเรา ทั้งงานภายในและภายนอกอาคาร</div>
+          <button class="catalog-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            ดูรูปภาพ
+          </button>
         </div>
       </div>
+
+      <div class="catalog-card" onclick="openViewer('cat-wood')">
+        <div class="catalog-thumb thumb-cat-wood">
+          <svg class="catalog-thumb-icon" width="52" height="68" viewBox="0 0 24 32"><rect x="2" y="2" width="20" height="28" rx="2" fill="none" stroke="#A0622A" stroke-width="1.5"/><line x1="2" y1="8" x2="22" y2="8" stroke="#A0622A" stroke-width="1"/><line x1="2" y1="14" x2="22" y2="14" stroke="#A0622A" stroke-width="1"/><line x1="2" y1="20" x2="22" y2="20" stroke="#A0622A" stroke-width="1"/><rect x="5" y="4" width="6" height="3" rx="1" fill="#A0622A" opacity=".35"/></svg>
+          <div class="catalog-badge">PDF / รูป</div>
+        </div>
+        <div class="catalog-body">
+          <div class="catalog-name">แคตตาล็อกประตูไม้จริง</div>
+          <div class="catalog-desc">รายการแบบประตูไม้จริงทั้งหมด พร้อมขนาดมาตรฐาน ลายแกะสลัก และตัวเลือกสี</div>
+          <button class="catalog-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            เปิดแคตตาล็อก
+          </button>
+        </div>
+      </div>
+
+      <div class="catalog-card" onclick="openViewer('cat-exclusive')">
+        <div class="catalog-thumb thumb-cat-upvc">
+          <svg class="catalog-thumb-icon" width="52" height="68" viewBox="0 0 24 32"><rect x="2" y="2" width="20" height="28" rx="2" fill="none" stroke="#1A5F8A" stroke-width="1.5"/><rect x="4" y="6" width="7" height="9" rx="1" fill="none" stroke="#1A5F8A" stroke-width="1"/><rect x="13" y="6" width="7" height="9" rx="1" fill="none" stroke="#1A5F8A" stroke-width="1"/><rect x="4" y="18" width="16" height="8" rx="1" fill="none" stroke="#1A5F8A" stroke-width="1" opacity=".5"/></svg>
+          <div class="catalog-badge">PDF / รูป</div>
+        </div>
+        <div class="catalog-body">
+          <div class="catalog-name">แคตตาล็อก uPVC / WPC รุ่น Exclusive</div>
+          <div class="catalog-desc">แบบประตู uPVC และ WPC รุ่น Exclusive พร้อมลวดลายและสีพิเศษระดับพรีเมียม</div>
+          <button class="catalog-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            เปิดแคตตาล็อก
+          </button>
+        </div>
+      </div>
+
+      <div class="catalog-card" onclick="openViewer('cat-standard')">
+        <div class="catalog-thumb thumb-cat-std">
+          <svg class="catalog-thumb-icon" width="52" height="68" viewBox="0 0 24 32"><rect x="2" y="2" width="20" height="28" rx="2" fill="none" stroke="#1A5F8A" stroke-width="1.5"/><line x1="12" y1="6" x2="12" y2="26" stroke="#1A5F8A" stroke-width="1" opacity=".6"/><circle cx="18" cy="16" r="2" fill="none" stroke="#1A5F8A" stroke-width="1"/><rect x="3" y="6" width="7" height="20" rx="1" fill="#1A5F8A" opacity=".08"/></svg>
+          <div class="catalog-badge">PDF / รูป</div>
+        </div>
+        <div class="catalog-body">
+          <div class="catalog-name">แคตตาล็อก uPVC รุ่น Standard</div>
+          <div class="catalog-desc">แบบประตู uPVC รุ่น Standard ครบทุกขนาดมาตรฐาน เหมาะสำหรับงานบ้านพักอาศัยทั่วไป</div>
+          <button class="catalog-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            เปิดแคตตาล็อก
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 
-<!-- SERVICE -->
+<div class="divider"></div>
+
+<!-- ══ GALLERY ══ -->
+<section id="gallery">
+  <div class="sec-eyebrow">ผลงานของเรา</div>
+  <div class="sec-title">ตัวอย่างงานติดตั้งจริง</div>
+  <div class="sec-sub">ส่งรูปภาพผลงานจริงของร้านมาได้เลย เราจะนำมาแสดงให้ลูกค้าได้ชมค่ะ</div>
+  <div class="gallery-grid">
+    <!-- เพิ่มรูปจริงได้โดยใส่ style="background:url('images/ชื่อรูป.jpg') center/cover" ใน div.gitem -->
+    <div class="gitem tall"><div class="gph"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>ประตูไม้จริง</div><div class="goverlay"><span class="glabel">ประตูไม้จริง</span></div></div>
+    <div class="gitem"><div class="gph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>ประตู uPVC</div><div class="goverlay"><span class="glabel">ประตู uPVC</span></div></div>
+    <div class="gitem"><div class="gph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>ประตู WPC</div><div class="goverlay"><span class="glabel">ประตู WPC</span></div></div>
+    <div class="gitem"><div class="gph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>วงกบ</div><div class="goverlay"><span class="glabel">วงกบ</span></div></div>
+    <div class="gitem"><div class="gph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>หน้าต่าง</div><div class="goverlay"><span class="glabel">หน้าต่าง</span></div></div>
+    <div class="gitem"><div class="gph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>งานติดตั้ง</div><div class="goverlay"><span class="glabel">งานติดตั้ง</span></div></div>
+  </div>
+</section>
+
+<!-- ══ SERVICE ══ -->
 <div class="service-section" id="service">
   <div class="service-inner">
-    <div class="sec-eyebrow" style="color:var(--gold)">บริการของเรา</div>
-    <div class="sec-title">ช่างมืออาชีพ บริการตรงไปตรงมา</div>
-    <div class="sec-sub">บอกตรงๆ ว่าทำได้แค่ไหน ไม่มีอะไรซ่อนไว้</div>
+    <div class="sec-eyebrow">บริการของเรา</div>
+    <div class="sec-title">ทีมช่างมืออาชีพ บริการตรงไปตรงมา</div>
+    <div class="sec-sub">เราบอกตรงๆ ว่าทำได้แค่ไหน เพราะความซื่อสัตย์คือสิ่งที่เราให้ความสำคัญมากที่สุด</div>
     <div class="hours-row">
       <div class="hours-chip"><strong>จันทร์ – เสาร์</strong><span>08:00 – 17:30 น.</span></div>
       <div class="hours-chip"><strong>อาทิตย์</strong><span>08:00 – 14:00 น.</span></div>
@@ -488,51 +520,39 @@
       <div class="scard">
         <div class="scard-icon">📐</div>
         <div class="scard-title">วัดขนาดถึงบ้าน</div>
-        <div class="scard-desc">ส่งช่างไปวัดให้ถึงที่ก่อนตัดสินใจสั่งทำ</div>
-        <div class="note-strip">กทม. และปริมณฑล เริ่มต้น 1,300 บาท<br>ต่างจังหวัดขึ้นกับระยะทาง</div>
+        <div class="scard-desc">ส่งช่างผู้ชำนาญการเข้าวัดขนาดถึงสถานที่ก่อนตัดสินใจสั่งทำ เพื่อความแม่นยำสูงสุด</div>
+        <div class="note-strip">กทม. และปริมณฑล เริ่มต้น 1,300 บาท<br>ต่างจังหวัดคิดตามระยะทาง</div>
       </div>
       <div class="scard">
         <div class="scard-icon">🔧</div>
         <div class="scard-title">ติดตั้งโดยช่างมีประสบการณ์</div>
-        <div class="scard-desc">ทีมช่างทำงานมา 10+ ปี ติดตั้งเรียบร้อย เก็บงานสวย</div>
+        <div class="scard-desc">ทีมช่างของเรามีประสบการณ์มากกว่า 10 ปี ดูแลงานติดตั้งให้เรียบร้อยและสวยงามทุกชิ้นงาน</div>
       </div>
       <div class="scard">
         <div class="scard-icon">✅</div>
-        <div class="scard-title">รับประกันงาน 30 วัน</div>
-        <div class="scard-desc">มีปัญหาหลังติดตั้งภายใน 30 วัน แจ้งเราได้เลย</div>
+        <div class="scard-title">รับประกันงานสี 30 วัน</div>
+        <div class="scard-desc">รับประกันคุณภาพงานสี 30 วัน ตามเงื่อนไขของบริษัท หากพบปัญหาภายในระยะเวลาที่กำหนด ยินดีดูแลและแก้ไขให้ทันที</div>
       </div>
       <div class="scard">
         <div class="scard-icon">💬</div>
-        <div class="scard-title">ปรึกษาได้ตลอด</div>
-        <div class="scard-desc">ไม่แน่ใจจะเลือกแบบไหน? ทักมาถามได้เลย ไม่มีค่าปรึกษา</div>
+        <div class="scard-title">ให้คำปรึกษาได้ตลอด</div>
+        <div class="scard-desc">ไม่แน่ใจว่าควรเลือกวัสดุชนิดใด? ทักมาปรึกษาได้เลยค่ะ ยินดีให้คำแนะนำโดยไม่มีค่าใช้จ่าย</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- CONTACT -->
+<!-- ══ CONTACT ══ -->
 <div class="contact-section" id="contact">
   <div class="contact-inner">
-    <div class="sec-eyebrow" style="color:var(--gold)">ติดต่อเรา</div>
+    <div class="sec-eyebrow">ติดต่อเรา</div>
     <div class="sec-title">-กลางซอยค้าไม้-</div>
-    <div class="sec-sub">ประตู · วงกบ · หน้าต่าง · uPVC · พร้อมช่วยทุกวัน</div>
+    <div class="sec-sub">ประตู · วงกบ · หน้าต่าง · uPVC · พร้อมให้บริการทุกวันค่ะ</div>
     <div class="contact-grid">
-      <a class="ccard" href="tel:0625151562">
-        <div class="cicon">📞</div>
-        <div><div class="clabel">โทรหาเรา</div><div class="cval">062-515-1562<br>095-324-2697</div></div>
-      </a>
-      <a class="ccard" href="https://line.me/R/ti/p/@klangsoiwoodwork" target="_blank" rel="noopener">
-        <div class="cicon">💬</div>
-        <div><div class="clabel">LINE</div><div class="cval">@klangsoiwoodwork</div></div>
-      </a>
-      <a class="ccard" href="https://maps.app.goo.gl/JyHk2e6rgPvUb6c6A" target="_blank" rel="noopener">
-        <div class="cicon">📍</div>
-        <div><div class="clabel">แผนที่</div><div class="cval">ดูบน Google Maps</div></div>
-      </a>
-      <div class="ccard">
-        <div class="cicon">🕐</div>
-        <div><div class="clabel">เวลาทำการ</div><div class="cval">จ–ส 08:00–17:30<br>อา 08:00–14:00</div></div>
-      </div>
+      <a class="ccard" href="tel:0625151562"><div class="cicon">📞</div><div><div class="clabel">โทรหาเรา</div><div class="cval">062-515-1562<br>095-324-2697</div></div></a>
+      <a class="ccard" href="https://line.me/R/ti/p/@klangsoiwoodwork" target="_blank" rel="noopener"><div class="cicon">💬</div><div><div class="clabel">LINE</div><div class="cval">@klangsoiwoodwork</div></div></a>
+      <a class="ccard" href="https://maps.app.goo.gl/JyHk2e6rgPvUb6c6A" target="_blank" rel="noopener"><div class="cicon">📍</div><div><div class="clabel">แผนที่ร้าน</div><div class="cval">ดูบน Google Maps</div></div></a>
+      <div class="ccard"><div class="cicon">🕐</div><div><div class="clabel">เวลาทำการ</div><div class="cval">จ–ส 08:00–17:30<br>อา 08:00–14:00</div></div></div>
     </div>
     <div class="social-row">
       <a class="sbtn line" href="https://line.me/R/ti/p/@klangsoiwoodwork" target="_blank" rel="noopener">LINE @klangsoiwoodwork</a>
@@ -543,6 +563,261 @@
 </div>
 
 <div class="footer">© 2567 -กลางซอยค้าไม้- · ประตู วงกบ หน้าต่าง uPVC</div>
+
+<script>
+/* ══════════════════════════════════════════════════
+   วิธีเพิ่มรูปภาพ / PDF ในแต่ละเมนู
+   ══════════════════════════════════════════════════
+   1. รูปภาพ: ใส่ path ใน images[] เช่น
+      images: ['images/wood-01.jpg', 'images/wood-02.jpg']
+
+   2. PDF: ใส่ path ใน pdfUrl เช่น
+      pdfUrl: 'files/catalog-wood.pdf'
+      (ถ้าใส่ pdfUrl จะแสดง PDF แทนรูป)
+   ══════════════════════════════════════════════════ */
+
+const catalogs = {
+  'wood-gallery': {
+    title: 'รวมงานประตูไม้จริง',
+    images: [
+          'images/wood-doors/wood-01.png',
+    'images/wood-doors/wood-010.png',
+    'images/wood-doors/wood-0100.png',
+    'images/wood-doors/wood-0101.png',
+    'images/wood-doors/wood-0102.png',
+    'images/wood-doors/wood-0103.png',
+    'images/wood-doors/wood-0104.png',
+    'images/wood-doors/wood-0105.png',
+    'images/wood-doors/wood-0106.png',
+    'images/wood-doors/wood-0107.png',
+    'images/wood-doors/wood-0108.png',
+    'images/wood-doors/wood-0109.png',
+    'images/wood-doors/wood-011.png',
+    'images/wood-doors/wood-0110.png',
+    'images/wood-doors/wood-0111.png',
+    'images/wood-doors/wood-0112.png',
+    'images/wood-doors/wood-0113.png',
+    'images/wood-doors/wood-0114.png',
+    'images/wood-doors/wood-0115.png',
+    'images/wood-doors/wood-0116.png',
+    'images/wood-doors/wood-0117.png',
+    'images/wood-doors/wood-0118.png',
+    'images/wood-doors/wood-0119.png',
+    'images/wood-doors/wood-012.png',
+    'images/wood-doors/wood-0120.png',
+    'images/wood-doors/wood-0121.png',
+    'images/wood-doors/wood-013.png',
+    'images/wood-doors/wood-014.png',
+    'images/wood-doors/wood-015.png',
+    'images/wood-doors/wood-016.png',
+    'images/wood-doors/wood-017.png',
+    'images/wood-doors/wood-018.png',
+    'images/wood-doors/wood-019.png',
+    'images/wood-doors/wood-02.png',
+    'images/wood-doors/wood-020.png',
+    'images/wood-doors/wood-021.png',
+    'images/wood-doors/wood-022.png',
+    'images/wood-doors/wood-023.png',
+    'images/wood-doors/wood-024.png',
+    'images/wood-doors/wood-025.png',
+    'images/wood-doors/wood-026.png',
+    'images/wood-doors/wood-027.png',
+    'images/wood-doors/wood-028.png',
+    'images/wood-doors/wood-029.png',
+    'images/wood-doors/wood-03.png',
+    'images/wood-doors/wood-030.png',
+    'images/wood-doors/wood-031.png',
+    'images/wood-doors/wood-032.png',
+    'images/wood-doors/wood-033.png',
+    'images/wood-doors/wood-034.png',
+    'images/wood-doors/wood-035.png',
+    'images/wood-doors/wood-036.png',
+    'images/wood-doors/wood-037.png',
+    'images/wood-doors/wood-038.png',
+    'images/wood-doors/wood-039.png',
+    'images/wood-doors/wood-04.png',
+    'images/wood-doors/wood-040.png',
+    'images/wood-doors/wood-041.png',
+    'images/wood-doors/wood-042.png',
+    'images/wood-doors/wood-043.png',
+    'images/wood-doors/wood-044.png',
+    'images/wood-doors/wood-045.png',
+    'images/wood-doors/wood-046.png',
+    'images/wood-doors/wood-047.png',
+    'images/wood-doors/wood-048.png',
+    'images/wood-doors/wood-049.png',
+    'images/wood-doors/wood-05.png',
+    'images/wood-doors/wood-050.png',
+    'images/wood-doors/wood-051.png',
+    'images/wood-doors/wood-052.png',
+    'images/wood-doors/wood-053.png',
+    'images/wood-doors/wood-054.png',
+    'images/wood-doors/wood-055.png',
+    'images/wood-doors/wood-056.png',
+    'images/wood-doors/wood-057.png',
+    'images/wood-doors/wood-058.png',
+    'images/wood-doors/wood-059.png',
+    'images/wood-doors/wood-06.png',
+    'images/wood-doors/wood-060.png',
+    'images/wood-doors/wood-061.png',
+    'images/wood-doors/wood-062.png',
+    'images/wood-doors/wood-063.png',
+    'images/wood-doors/wood-064.png',
+    'images/wood-doors/wood-065.png',
+    'images/wood-doors/wood-066.png',
+    'images/wood-doors/wood-067.png',
+    'images/wood-doors/wood-068.png',
+    'images/wood-doors/wood-069.png',
+    'images/wood-doors/wood-07.png',
+    'images/wood-doors/wood-070.png',
+    'images/wood-doors/wood-071.png',
+    'images/wood-doors/wood-072.png',
+    'images/wood-doors/wood-073.png',
+    'images/wood-doors/wood-074.png',
+    'images/wood-doors/wood-075.png',
+    'images/wood-doors/wood-076.png',
+    'images/wood-doors/wood-077.png',
+    'images/wood-doors/wood-078.png',
+    'images/wood-doors/wood-079.png',
+    'images/wood-doors/wood-08.png',
+    'images/wood-doors/wood-080.png',
+    'images/wood-doors/wood-081.png',
+    'images/wood-doors/wood-082.png',
+    'images/wood-doors/wood-083.png',
+    'images/wood-doors/wood-084.png',
+    'images/wood-doors/wood-085.png',
+    'images/wood-doors/wood-086.png',
+    'images/wood-doors/wood-087.png',
+    'images/wood-doors/wood-088.png',
+    'images/wood-doors/wood-089.png',
+    'images/wood-doors/wood-09.png',
+    'images/wood-doors/wood-090.png',
+    'images/wood-doors/wood-091.png',
+    'images/wood-doors/wood-092.png',
+    'images/wood-doors/wood-093.png',
+    'images/wood-doors/wood-094.png',
+    'images/wood-doors/wood-095.png',
+    'images/wood-doors/wood-096.png',
+    'images/wood-doors/wood-097.png',
+    'images/wood-doors/wood-098.png',
+    'images/wood-doors/wood-099.png',
+      // 'images/wood-01.jpg',
+      // 'images/wood-02.jpg',
+      // 'images/wood-03.jpg',
+    ],
+    pdfUrl: ''
+  },
+  'install-gallery': {
+    title: 'รวมผลงานการติดตั้ง',
+    images: [
+      // 'images/install-01.jpg',
+      // 'images/install-02.jpg',
+    ],
+    pdfUrl: ''
+  },
+  'cat-wood': {
+    title: 'แคตตาล็อกประตูไม้จริง',
+    images: [
+      // 'images/cat-wood-01.jpg',
+      // 'images/cat-wood-02.jpg',
+    ],
+    pdfUrl: 'files/catalog-wood.pdf' // 'files/catalog-wood.pdf'
+  },
+  'cat-exclusive': {
+    title: 'แคตตาล็อก uPVC / WPC รุ่น Exclusive',
+    images: [
+      // 'images/cat-exclusive-01.jpg',
+    ],
+    pdfUrl: 'files/catalog-exclusive.pdf' // 'files/catalog-exclusive.pdf'
+  },
+  'cat-standard': {
+    title: 'แคตตาล็อก uPVC รุ่น Standard',
+    images: [
+      // 'images/cat-standard-01.jpg',
+    ],
+    pdfUrl: '' // 'files/catalog-standard.pdf'
+  }
+};
+
+let current = null;
+let idx = 0;
+
+function openViewer(id) {
+  current = catalogs[id];
+  idx = 0;
+  document.getElementById('viewer-title').textContent = current.title;
+  document.getElementById('viewer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  render();
+}
+
+function closeViewer() {
+  document.getElementById('viewer').classList.remove('open');
+  document.body.style.overflow = '';
+  const iframe = document.getElementById('v-iframe');
+  if (iframe) iframe.src = '';
+}
+
+function render() {
+  const wrap = document.getElementById('viewer-wrap');
+  const counter = document.getElementById('viewer-counter');
+  const btnP = document.getElementById('btn-prev');
+  const btnN = document.getElementById('btn-next');
+
+  // ล้าง wrap
+  wrap.innerHTML = '';
+
+  // กรณียังไม่มีไฟล์
+  if (!current || (current.images.length === 0 && !current.pdfUrl)) {
+    wrap.innerHTML = `
+      <div class="viewer-placeholder">
+        <div class="viewer-placeholder-box">🖼</div>
+        <p>ยังไม่มีรูปภาพในหมวดนี้<br><br>
+        เปิดไฟล์ <code>index.html</code> ใน VS Code<br>
+        หาคำว่า <code>const catalogs</code> แล้วเพิ่ม<br>path รูปในอาร์เรย์ <code>images</code> ของเมนูนี้ค่ะ</p>
+      </div>`;
+    counter.textContent = '— / —';
+    btnP.disabled = true;
+    btnN.disabled = true;
+    return;
+  }
+
+  // PDF
+  if (current.pdfUrl) {
+    const iframe = document.createElement('iframe');
+    iframe.id = 'v-iframe';
+    iframe.className = 'viewer-iframe';
+    iframe.src = current.pdfUrl;
+    wrap.appendChild(iframe);
+    counter.textContent = 'PDF';
+    btnP.disabled = true;
+    btnN.disabled = true;
+    return;
+  }
+
+  // รูปภาพ
+  const img = document.createElement('img');
+  img.src = current.images[idx];
+  img.alt = current.title + ' ' + (idx + 1);
+  wrap.appendChild(img);
+  counter.textContent = (idx + 1) + ' / ' + current.images.length;
+  btnP.disabled = idx === 0;
+  btnN.disabled = idx === current.images.length - 1;
+}
+
+function changeSlide(dir) {
+  if (!current || current.pdfUrl) return;
+  idx = Math.max(0, Math.min(current.images.length - 1, idx + dir));
+  render();
+}
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('viewer').classList.contains('open')) return;
+  if (e.key === 'Escape') closeViewer();
+  if (e.key === 'ArrowRight') changeSlide(1);
+  if (e.key === 'ArrowLeft') changeSlide(-1);
+});
+</script>
 
 </body>
 </html>
