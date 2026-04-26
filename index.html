@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>กลางซอยค้าไม้ — ประตู วงกบ หน้าต่าง uPVC</title>
+  <link rel="icon" type="image/png" href="klangsoiwoodwork-logo.png" />
   <meta name="description" content="ร้านกลางซอยค้าไม้ จำหน่ายประตูไม้จริง ประตู uPVC ประตู WPC วงกบ หน้าต่าง ติดตั้งโดยช่างมีประสบการณ์" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,8 +36,24 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       position: sticky; top: 0; z-index: 100; gap: 16px;
-    }
-    .nav-logo { font-family: 'Prompt', sans-serif; color: var(--gold); font-size: 1.1rem; font-weight: 700; letter-spacing: .5px; line-height: 1.2; white-space: nowrap; }
+    }.nav-logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border2);
+  flex-shrink: 0;
+}
+    .nav-logo { display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Prompt', sans-serif;
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 1.2;
+  white-space: nowrap; }
     .nav-logo span { display: block; font-size: 9px; color: var(--text3); font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
     .nav-links { display: flex; gap: 1.5rem; }
     .nav-links a { color: var(--text2); text-decoration: none; font-size: 12px; letter-spacing: .3px; transition: color .2s; font-weight: 400; }
@@ -198,7 +215,9 @@
 
 <!-- NAV -->
 <nav class="nav">
-  <div class="nav-logo">-กลางซอยค้าไม้-
+  <div class="nav-logo">
+  <img src="klangsoiwoodwork-logo.png" class="nav-logo-img" alt="logo" />
+  -กลางซอยค้าไม้-
     <span>ประตู · วงกบ · หน้าต่าง · uPVC</span>
   </div>
   <div class="nav-links">
@@ -517,7 +536,7 @@
     </div>
     <div class="social-row">
       <a class="sbtn line" href="https://line.me/R/ti/p/@klangsoiwoodwork" target="_blank" rel="noopener">LINE @klangsoiwoodwork</a>
-      <a class="sbtn fb" href="https://www.facebook.com/search/top?q=กลางซอยค้าไม้" target="_blank" rel="noopener">Facebook</a>
+      <a class="sbtn fb" href="https://www.facebook.com/klangsoiwoodwork" target="_blank" rel="noopener">Facebook</a>
       <a class="sbtn tt" href="https://www.tiktok.com/@klangsoiwoodwork" target="_blank" rel="noopener">TikTok @klangsoiwoodwork</a>
     </div>
   </div>
