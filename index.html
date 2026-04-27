@@ -55,19 +55,32 @@
     .pcard { background:white; border-radius:var(--radius); border:1px solid var(--border2); transition:box-shadow .2s; box-shadow:0 2px 8px rgba(92,61,30,.06); }
     .pcard:hover { box-shadow:0 6px 24px rgba(92,61,30,.12); }
     .pcard-header { display:flex; align-items:center; gap:16px; padding:1.5rem 1.5rem 1rem; }
-    .pcard-icon { width:52px; height:52px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid var(--border2); }
-    .icon-wood  { background:linear-gradient(135deg,#F5E6C8,#E8C88A); }
-    .icon-upvc  { background:linear-gradient(135deg,#D4E8F5,#A8D0EE); }
-    .icon-wpc   { background:linear-gradient(135deg,#D4EDD6,#A8D8AA); }
-    .icon-frame { background:linear-gradient(135deg,#F0E0C8,#D4B890); }
+    .pcard-icon { width:52px; height:52px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid var(--border2); overflow:hidden; position:relative; }
+    .pcard-icon img { width:100%; height:100%; object-fit:cover; border-radius:11px; }
+    .pcard-icon .icon-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
+    .icon-wood    { background:linear-gradient(135deg,#F5E6C8,#E8C88A); }
+    .icon-upvcwpc { background:linear-gradient(135deg,#D4E8F5,#C4DDB8); }
+    .icon-frame   { background:linear-gradient(135deg,#F0E0C8,#D4B890); }
     .ptag { display:inline-block; font-size:11px; padding:3px 12px; border-radius:20px; font-weight:500; letter-spacing:.3px; margin-bottom:5px; border:1px solid; }
-    .tag-wood  { color:#7A4A0A; border-color:rgba(122,74,10,.3);  background:rgba(122,74,10,.08); }
-    .tag-upvc  { color:#1A5F8A; border-color:rgba(26,95,138,.3);  background:rgba(26,95,138,.08); }
-    .tag-wpc   { color:#1A6B2A; border-color:rgba(26,107,42,.3);  background:rgba(26,107,42,.08); }
-    .tag-frame { color:#8B4513; border-color:rgba(139,69,19,.3);  background:rgba(139,69,19,.08); }
+    .tag-wood    { color:#7A4A0A; border-color:rgba(122,74,10,.3);  background:rgba(122,74,10,.08); }
+    .tag-upvcwpc { color:#1A5F8A; border-color:rgba(26,95,138,.3);  background:rgba(26,95,138,.08); }
+    .tag-frame   { color:#8B4513; border-color:rgba(139,69,19,.3);  background:rgba(139,69,19,.08); }
     .pcard-name { font-size:1.05rem; font-weight:600; color:var(--brown); line-height:1.35; }
     .pcard-body { padding:.25rem 1.5rem 1.5rem; }
     .pdesc { font-size:15px; color:var(--text2); line-height:1.85; margin-bottom:1.1rem; font-weight:400; }
+
+    /* PRODUCT IMAGE STRIP */
+    .product-imgs-label { font-size:11px; color:var(--text3); letter-spacing:1px; text-transform:uppercase; margin-bottom:.5rem; font-weight:500; }
+    .product-imgs { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin:1rem 0; }
+    .product-img-slot { aspect-ratio:3/4; border-radius:10px; overflow:hidden; background:var(--bg3); border:1px solid var(--border2); position:relative; cursor:pointer; transition:box-shadow .2s,transform .2s; }
+    .product-img-slot:hover { box-shadow:0 6px 20px rgba(92,61,30,.15); transform:translateY(-2px); }
+    .product-img-slot img { width:100%; height:100%; object-fit:cover; display:block; }
+    .product-img-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; color:var(--text3); font-size:11px; text-align:center; padding:8px; }
+    .product-img-overlay { position:absolute; inset:0; background:rgba(0,0,0,0); transition:background .2s; display:flex; align-items:flex-end; padding:8px; }
+    .product-img-slot:hover .product-img-overlay { background:rgba(0,0,0,.3); }
+    .product-img-label { color:white; font-size:11px; opacity:0; transition:opacity .2s; background:rgba(160,98,42,.8); padding:2px 8px; border-radius:4px; font-weight:500; }
+    .product-img-slot:hover .product-img-label { opacity:1; }
+
     .wood-grid  { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:1.1rem; }
     .frame-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:10px; margin-bottom:1.1rem; }
     .wood-item { background:var(--bg2); border:1px solid var(--border); border-radius:var(--r-sm); padding:.9rem 1rem; }
@@ -89,15 +102,15 @@
     .badge.b { color:#1A5F8A; border-color:rgba(26,95,138,.25); background:rgba(26,95,138,.06); }
     .badge.o { color:#8B4513; border-color:rgba(139,69,19,.25); background:rgba(139,69,19,.06); }
 
-    /* CATALOG LIST */
+    /* CATALOG */
     .catalog-section { background:var(--bg2); padding:3rem 2rem; border-top:1px solid var(--border2); }
     .catalog-inner { max-width:960px; margin:0 auto; }
     .catalog-list { display:flex; flex-direction:column; gap:10px; }
     .catalog-item { background:white; border:1px solid var(--border2); border-radius:var(--radius); padding:1.25rem 1.5rem; display:flex; align-items:center; gap:1.2rem; cursor:pointer; transition:box-shadow .2s,border-color .2s; box-shadow:0 2px 6px rgba(92,61,30,.05); }
     .catalog-item:hover { box-shadow:0 6px 20px rgba(92,61,30,.12); border-color:var(--gold); }
     .catalog-num { width:40px; height:40px; background:linear-gradient(135deg,var(--gold),var(--gold2)); border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-size:16px; font-weight:700; flex-shrink:0; }
-    .catalog-name { font-size:15px; font-weight:600; color:var(--brown); }
-    .catalog-arrow { color:var(--text3); transition:transform .2s,color .2s; flex-shrink:0; margin-left:auto; }
+    .catalog-name { font-size:15px; font-weight:600; color:var(--brown); flex:1; }
+    .catalog-arrow { color:var(--text3); transition:transform .2s,color .2s; flex-shrink:0; }
     .catalog-item:hover .catalog-arrow { transform:translateX(4px); color:var(--gold); }
 
     /* VIEWER */
@@ -122,6 +135,18 @@
     .viewer-nav-btn:hover:not(:disabled) { background:rgba(255,255,255,.2); }
     .viewer-nav-btn:disabled { opacity:.3; cursor:default; }
     .viewer-counter { color:rgba(255,255,255,.55); font-size:13px; min-width:80px; text-align:center; }
+
+    /* LIGHTBOX (product imgs) */
+    .lb-overlay { display:none; position:fixed; inset:0; background:rgba(30,20,10,.93); z-index:3000; align-items:center; justify-content:center; }
+    .lb-overlay.open { display:flex; }
+    .lb-img { max-width:90vw; max-height:90vh; object-fit:contain; border-radius:10px; box-shadow:0 8px 40px rgba(0,0,0,.6); }
+    .lb-close { position:fixed; top:1.2rem; right:1.2rem; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); color:white; width:40px; height:40px; border-radius:10px; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+    .lb-close:hover { background:rgba(255,255,255,.25); }
+    .lb-prev,.lb-next { position:fixed; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); color:white; width:44px; height:44px; border-radius:10px; font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+    .lb-prev { left:1rem; }
+    .lb-next { right:1rem; }
+    .lb-prev:hover,.lb-next:hover { background:rgba(255,255,255,.22); }
+    .lb-counter { position:fixed; bottom:1.5rem; left:50%; transform:translateX(-50%); color:rgba(255,255,255,.6); font-size:13px; font-family:'Prompt',sans-serif; }
 
     /* SERVICE */
     .service-section { background:var(--bg2); padding:3rem 2rem; border-top:1px solid var(--border2); }
@@ -164,12 +189,22 @@
       .wood-grid { grid-template-columns:1fr; }
       .finish-row { grid-template-columns:1fr; }
       .feat-list { grid-template-columns:1fr; }
+      .product-imgs { grid-template-columns:repeat(3,1fr); }
     }
   </style>
 </head>
 <body>
 
-<!-- VIEWER -->
+<!-- LIGHTBOX สำหรับรูปตัวอย่างสินค้า -->
+<div class="lb-overlay" id="lb">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <button class="lb-prev" onclick="lbSlide(-1)">‹</button>
+  <img class="lb-img" id="lb-img" src="" alt="" />
+  <button class="lb-next" onclick="lbSlide(1)">›</button>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<!-- VIEWER สำหรับแคตตาล็อก -->
 <div class="viewer-overlay" id="viewer">
   <div class="viewer-header">
     <div class="viewer-title-wrap">
@@ -227,13 +262,26 @@
   <div class="sec-sub">แต่ละวัสดุมีจุดเด่นที่แตกต่างกัน หากยังไม่แน่ใจว่าแบบใดเหมาะสม ทักมาปรึกษาได้เลยค่ะ</div>
   <div class="pstack">
 
+    <!-- ประตูไม้จริง -->
     <div class="pcard">
       <div class="pcard-header">
-        <div class="pcard-icon icon-wood"><svg width="28" height="40" viewBox="0 0 30 44"><rect x="1" y="1" width="28" height="42" rx="3" fill="#A0622A" opacity=".8"/><rect x="4" y="5" width="22" height="14" rx="1.5" fill="#C4813E" opacity=".5"/><rect x="4" y="23" width="22" height="14" rx="1.5" fill="#C4813E" opacity=".5"/><circle cx="24" cy="22" r="2.5" fill="#7A4A0A"/></svg></div>
+        <div class="pcard-icon icon-wood" id="icon-wood">
+          <div class="icon-placeholder">
+            <svg width="28" height="40" viewBox="0 0 30 44"><rect x="1" y="1" width="28" height="42" rx="3" fill="#A0622A" opacity=".8"/><rect x="4" y="5" width="22" height="14" rx="1.5" fill="#C4813E" opacity=".5"/><rect x="4" y="23" width="22" height="14" rx="1.5" fill="#C4813E" opacity=".5"/><circle cx="24" cy="22" r="2.5" fill="#7A4A0A"/></svg>
+          </div>
+        </div>
         <div><div><span class="ptag tag-wood">ประตูไม้จริง</span></div><div class="pcard-name">ประตูไม้จริง — สัก · ตะแบก · สะเดา</div></div>
       </div>
       <div class="pcard-body">
         <div class="pdesc">ประตูไม้จริงมอบความอบอุ่นและเอกลักษณ์ที่วัสดุชนิดอื่นไม่สามารถทดแทนได้ แต่ละชนิดมีคุณสมบัติและช่วงราคาที่แตกต่างกัน ควรเลือกให้เหมาะสมกับตำแหน่งและการใช้งาน</div>
+        <div class="product-imgs-label">ตัวอย่างผลงาน</div>
+        <div class="product-imgs" id="imgs-wood">
+          <div class="product-img-slot" onclick="openLb('wood',0)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 1</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('wood',1)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 2</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('wood',2)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 3</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('wood',3)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 4</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('wood',4)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 5</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+        </div>
         <div class="wood-grid">
           <div class="wood-item"><div class="wood-item-name">ไม้สะเดา</div><div class="wood-item-desc">เนื้อไม้แข็งปานกลาง มีน้ำยางธรรมชาติที่ช่วยป้องกันปลวกได้ดี ทำสีได้ตามต้องการ ราคาเข้าถึงได้ง่าย เหมาะสำหรับงานภายในอาคาร</div></div>
           <div class="wood-item"><div class="wood-item-name">ไม้ตะแบก</div><div class="wood-item-desc">เนื้อไม้มีลายเส้นตรงสวยงามคล้ายไม้สัก ทำสีได้ตามต้องการ มีความแข็งแรงทนทาน เหมาะสำหรับงานภายในและภายนอกอาคาร</div></div>
@@ -243,51 +291,69 @@
       </div>
     </div>
 
+    <!-- ประตู uPVC / WPC -->
     <div class="pcard">
       <div class="pcard-header">
-        <div class="pcard-icon icon-upvc"><svg width="28" height="40" viewBox="0 0 28 40"><rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#1A5F8A" stroke-width="1.5"/><rect x="5" y="5" width="18" height="30" rx="1.5" fill="#1A5F8A" opacity=".08"/><line x1="14" y1="5" x2="14" y2="35" stroke="#1A5F8A" stroke-width="1" opacity=".4"/><circle cx="21" cy="20" r="2" fill="none" stroke="#1A5F8A" stroke-width="1.2"/><circle cx="21" cy="20" r=".6" fill="#1A5F8A"/></svg></div>
-        <div><div><span class="ptag tag-upvc">ประตู uPVC</span></div><div class="pcard-name">ประตู uPVC — ทนน้ำ ทนความชื้น เหมาะสำหรับงานภายใน</div></div>
+        <div class="pcard-icon icon-upvcwpc" id="icon-upvcwpc">
+          <div class="icon-placeholder">
+            <svg width="28" height="40" viewBox="0 0 28 40"><rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#1A5F8A" stroke-width="1.5"/><rect x="5" y="5" width="18" height="30" rx="1.5" fill="#1A5F8A" opacity=".08"/><line x1="14" y1="5" x2="14" y2="35" stroke="#1A5F8A" stroke-width="1" opacity=".4"/><line x1="5" y1="20" x2="23" y2="20" stroke="#1A6B2A" stroke-width="1" opacity=".4"/><circle cx="21" cy="14" r="1.8" fill="none" stroke="#1A5F8A" stroke-width="1.2"/><circle cx="21" cy="26" r="1.8" fill="none" stroke="#1A6B2A" stroke-width="1.2"/></svg>
+          </div>
+        </div>
+        <div><div><span class="ptag tag-upvcwpc">ประตู uPVC / WPC</span></div><div class="pcard-name">ประตู uPVC / WPC — ทนน้ำ ทนความชื้น เหมาะสำหรับงานภายใน</div></div>
       </div>
       <div class="pcard-body">
         <div class="warn-box"><span>⚠</span> ไม่เหมาะสำหรับพื้นที่ที่ได้รับแสงแดดโดยตรง เนื่องจากมีโอกาสเกิดการโก่งตัวสูง แนะนำให้ติดตั้งภายในอาคารเท่านั้น</div>
-        <div class="feat-box"><div class="feat-box-label">คุณสมบัติหลัก</div><div class="feat-list"><div class="feat-item">กันน้ำและทนความชื้นได้ดีเยี่ยม</div><div class="feat-item">ทนต่อปลวก มอด และแมลง</div><div class="feat-item">ไม่ผุ ไม่บวม ดูแลรักษาง่าย</div><div class="feat-item">น้ำหนักเบา ติดตั้งสะดวกรวดเร็ว</div></div></div>
-        <div class="finish-row">
-          <div class="finish-card"><div class="finish-name">รุ่นพ่นสีอุตสาหกรรม</div><div class="finish-desc">เลือกเฉดสีได้ตามต้องการ ผิวสัมผัสเรียบเนียนสม่ำเสมอ ไม่มีลวดลายไม้</div></div>
-          <div class="finish-card"><div class="finish-name">รุ่นปิดผิวลายไม้</div><div class="finish-desc">ผิวหน้าพิมพ์ลายเสี้ยนไม้ธรรมชาติ ให้ความรู้สึกใกล้เคียงไม้จริงมากกว่า</div></div>
+        <div class="product-imgs-label">ตัวอย่างผลงาน</div>
+        <div class="product-imgs" id="imgs-upvcwpc">
+          <div class="product-img-slot" onclick="openLb('upvcwpc',0)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 1</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('upvcwpc',1)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 2</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('upvcwpc',2)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 3</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('upvcwpc',3)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 4</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('upvcwpc',4)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 5</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
         </div>
-        <div class="badges"><span class="badge b">ห้องน้ำ</span><span class="badge b">ห้องนอน</span><span class="badge g">กันน้ำ 100%</span><span class="badge g">ทนปลวก</span></div>
+        <div class="feat-box">
+          <div class="feat-box-label">คุณสมบัติหลัก</div>
+          <div class="feat-list">
+            <div class="feat-item">กันน้ำและทนความชื้นได้ดีเยี่ยม</div>
+            <div class="feat-item">ทนต่อปลวก มอด และแมลง</div>
+            <div class="feat-item">ไม่ผุ ไม่บวม ดูแลรักษาง่าย</div>
+            <div class="feat-item">น้ำหนักเบา ติดตั้งสะดวกรวดเร็ว</div>
+          </div>
+        </div>
+        <div class="finish-row">
+          <div class="finish-card"><div class="finish-name">รุ่นพ่นสีอุตสาหกรรม</div><div class="finish-desc">เลือกเฉดสีได้ตามต้องการ ผิวสัมผัสเรียบเนียนสม่ำเสมอ ให้ความรู้สึกเป็นวัสดุสังเคราะห์ ไม่มีลวดลายไม้</div></div>
+          <div class="finish-card"><div class="finish-name">รุ่นปิดผิวลายไม้</div><div class="finish-desc">ผิวหน้าพิมพ์ลายเสี้ยนไม้ธรรมชาติ ให้ความรู้สึกใกล้เคียงไม้จริงมากกว่า เหมาะสำหรับผู้ที่ต้องการความสวยงาม</div></div>
+        </div>
+        <div class="badges"><span class="badge b">ห้องน้ำ</span><span class="badge b">ห้องนอน</span><span class="badge b">ภายในอาคาร</span><span class="badge g">กันน้ำ 100%</span><span class="badge g">ทนปลวก</span></div>
       </div>
     </div>
 
+    <!-- วงกบ -->
     <div class="pcard">
       <div class="pcard-header">
-        <div class="pcard-icon icon-wpc"><svg width="28" height="40" viewBox="0 0 28 40"><rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#1A6B2A" stroke-width="1.5"/><rect x="5" y="5" width="18" height="30" rx="1.5" fill="#1A6B2A" opacity=".08"/><line x1="5" y1="12" x2="23" y2="12" stroke="#1A6B2A" stroke-width="1" opacity=".5"/><line x1="5" y1="19" x2="23" y2="19" stroke="#1A6B2A" stroke-width="1" opacity=".5"/><line x1="5" y1="26" x2="23" y2="26" stroke="#1A6B2A" stroke-width="1" opacity=".5"/><circle cx="21" cy="20" r="2" fill="none" stroke="#1A6B2A" stroke-width="1.2"/><circle cx="21" cy="20" r=".6" fill="#1A6B2A"/></svg></div>
-        <div><div><span class="ptag tag-wpc">ประตู WPC</span></div><div class="pcard-name">ประตู WPC — ทนน้ำ ทนความชื้น เหมาะสำหรับงานภายใน</div></div>
-      </div>
-      <div class="pcard-body">
-        <div class="warn-box"><span>⚠</span> ไม่เหมาะสำหรับพื้นที่ที่ได้รับแสงแดดโดยตรง เนื่องจากมีโอกาสเกิดการโก่งตัวสูง แนะนำให้ติดตั้งภายในอาคารเท่านั้น</div>
-        <div class="feat-box"><div class="feat-box-label">คุณสมบัติหลัก</div><div class="feat-list"><div class="feat-item">กันน้ำและทนความชื้นได้ดีเยี่ยม</div><div class="feat-item">ทนต่อปลวก มอด และแมลง</div><div class="feat-item">ไม่ผุ ไม่บวม ดูแลรักษาง่าย</div><div class="feat-item">น้ำหนักเบา ติดตั้งสะดวกรวดเร็ว</div></div></div>
-        <div class="finish-row">
-          <div class="finish-card"><div class="finish-name">รุ่นพ่นสีอุตสาหกรรม</div><div class="finish-desc">เลือกเฉดสีได้ตามต้องการ ผิวสัมผัสเรียบเนียนสม่ำเสมอ ไม่มีลวดลายไม้</div></div>
-          <div class="finish-card"><div class="finish-name">รุ่นปิดผิวลายไม้</div><div class="finish-desc">ผิวหน้าพิมพ์ลายเสี้ยนไม้ธรรมชาติ ให้ความรู้สึกใกล้เคียงไม้จริงมากกว่า</div></div>
+        <div class="pcard-icon icon-frame" id="icon-frame">
+          <div class="icon-placeholder">
+            <svg width="28" height="40" viewBox="0 0 28 40"><rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#8B4513" stroke-width="1.8"/><rect x="5" y="5" width="18" height="30" rx="1" fill="none" stroke="#8B4513" stroke-width="1.2" opacity=".5"/><rect x="9" y="9" width="10" height="22" rx="1" fill="#8B4513" opacity=".1"/><line x1="1" y1="20" x2="5" y2="20" stroke="#8B4513" stroke-width="1.5" opacity=".6"/><line x1="23" y1="20" x2="27" y2="20" stroke="#8B4513" stroke-width="1.5" opacity=".6"/></svg>
+          </div>
         </div>
-        <div class="badges"><span class="badge b">ห้องน้ำ</span><span class="badge b">ห้องนอน</span><span class="badge g">กันน้ำ 100%</span><span class="badge g">ทนปลวก</span></div>
-      </div>
-    </div>
-
-    <div class="pcard">
-      <div class="pcard-header">
-        <div class="pcard-icon icon-frame"><svg width="28" height="40" viewBox="0 0 28 40"><rect x="1" y="1" width="26" height="38" rx="3" fill="none" stroke="#8B4513" stroke-width="1.8"/><rect x="5" y="5" width="18" height="30" rx="1" fill="none" stroke="#8B4513" stroke-width="1.2" opacity=".5"/><rect x="9" y="9" width="10" height="22" rx="1" fill="#8B4513" opacity=".1"/><line x1="1" y1="20" x2="5" y2="20" stroke="#8B4513" stroke-width="1.5" opacity=".6"/><line x1="23" y1="20" x2="27" y2="20" stroke="#8B4513" stroke-width="1.5" opacity=".6"/></svg></div>
         <div><div><span class="ptag tag-frame">วงกบประตู</span></div><div class="pcard-name">วงกบประตู — ไม้จริงและ WPC คุณภาพสูง</div></div>
       </div>
       <div class="pcard-body">
         <div class="pdesc">วงกบที่แข็งแรงและได้มาตรฐานถือเป็นองค์ประกอบสำคัญที่ช่วยให้การติดตั้งประตูมีความมั่นคงและใช้งานได้ยาวนาน เรามีให้เลือกทั้งวงกบไม้จริงหลายชนิด และวงกบ WPC สำหรับบานประตู uPVC และ WPC</div>
+        <div class="product-imgs-label">ตัวอย่างผลงาน</div>
+        <div class="product-imgs" id="imgs-frame">
+          <div class="product-img-slot" onclick="openLb('frame',0)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 1</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('frame',1)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 2</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('frame',2)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 3</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('frame',3)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 4</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+          <div class="product-img-slot" onclick="openLb('frame',4)"><div class="product-img-placeholder"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>รูปที่ 5</div><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div></div>
+        </div>
         <div class="frame-grid">
-          <div class="wood-item"><div class="wood-item-name">วงกบไม้สะเดา</div><div class="wood-item-desc">เนื้อไม้แข็งปานกลาง มีน้ำยางธรรมชาติป้องกันปลวก ราคาประหยัด</div></div>
-          <div class="wood-item"><div class="wood-item-name">วงกบไม้พลวง</div><div class="wood-item-desc">เนื้อไม้หนักแน่น ความแข็งแรงสูง เหมาะสำหรับประตูทางเข้าหลัก</div></div>
-          <div class="wood-item"><div class="wood-item-name">วงกบไม้เต็ง</div><div class="wood-item-desc">ไม้เนื้อแข็งคุณภาพสูง ทนต่อการบิดตัวและสภาพอากาศ</div></div>
-          <div class="wood-item"><div class="wood-item-name">วงกบไม้แดง</div><div class="wood-item-desc">เนื้อไม้สีแดงอมน้ำตาล ลายสวยงาม ความแข็งแรงดี</div></div>
-          <div class="wood-item"><div class="wood-item-name">วงกบ WPC</div><div class="wood-item-desc">กันน้ำ ทนปลวก ไม่ผุ เหมาะสำหรับใช้คู่กับบาน uPVC และ WPC</div></div>
+          <div class="wood-item"><div class="wood-item-name">วงกบไม้สะเดา</div><div class="wood-item-desc">เนื้อไม้แข็งปานกลาง มีน้ำยางธรรมชาติป้องกันปลวก ราคาประหยัด เหมาะสำหรับงานภายในทั่วไป</div></div>
+          <div class="wood-item"><div class="wood-item-name">วงกบไม้พลวง</div><div class="wood-item-desc">เนื้อไม้หนักแน่น ความแข็งแรงสูง ทนทานต่อแรงกระแทกได้ดี เหมาะสำหรับประตูทางเข้าหลัก</div></div>
+          <div class="wood-item"><div class="wood-item-name">วงกบไม้เต็ง</div><div class="wood-item-desc">ไม้เนื้อแข็งคุณภาพสูง ทนต่อการบิดตัวและสภาพอากาศ เหมาะสำหรับงานที่ต้องการความแข็งแรงเป็นพิเศษ</div></div>
+          <div class="wood-item"><div class="wood-item-name">วงกบไม้แดง</div><div class="wood-item-desc">เนื้อไม้สีแดงอมน้ำตาล ลายสวยงาม ความแข็งแรงดี เหมาะสำหรับงานที่ต้องการทั้งความแข็งแรงและความสวยงาม</div></div>
+          <div class="wood-item"><div class="wood-item-name">วงกบ WPC</div><div class="wood-item-desc">วัสดุผสมไม้และพลาสติก กันน้ำ ทนปลวก ไม่ผุ เหมาะสำหรับใช้คู่กับบานประตู uPVC และ WPC หรือพื้นที่ที่มีความชื้นสูง</div></div>
         </div>
         <div class="badges"><span class="badge o">ใช้คู่กับประตูทุกชนิด</span><span class="badge g">วงกบ WPC กันน้ำ</span><span class="badge">สั่งทำตามขนาด</span></div>
       </div>
@@ -305,37 +371,31 @@
     <div class="sec-title">เลือกชมได้เลยค่ะ</div>
     <div class="sec-sub">กดที่รายการเพื่อเปิดดูรูปภาพหรือแคตตาล็อก สามารถเลื่อนดูทีละหน้าได้เลย</div>
     <div class="catalog-list">
-
       <div class="catalog-item" onclick="openViewer('wood-gallery')">
         <div class="catalog-num">1</div>
         <div class="catalog-name">รวมงานประตูไม้จริง</div>
         <svg class="catalog-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </div>
-
       <div class="catalog-item" onclick="openViewer('install-gallery')">
         <div class="catalog-num">2</div>
         <div class="catalog-name">รวมผลงานการติดตั้ง</div>
         <svg class="catalog-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </div>
-
       <div class="catalog-item" onclick="openViewer('cat-wood')">
         <div class="catalog-num">3</div>
         <div class="catalog-name">แคตตาล็อกประตูไม้จริง</div>
         <svg class="catalog-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </div>
-
       <div class="catalog-item" onclick="openViewer('cat-exclusive')">
         <div class="catalog-num">4</div>
         <div class="catalog-name">แคตตาล็อก uPVC / WPC รุ่น Exclusive</div>
         <svg class="catalog-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </div>
-
       <div class="catalog-item" onclick="openViewer('cat-standard')">
         <div class="catalog-num">5</div>
         <div class="catalog-name">แคตตาล็อก uPVC รุ่น Standard</div>
         <svg class="catalog-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </div>
-
     </div>
   </div>
 </div>
@@ -382,354 +442,143 @@
 <div class="footer">© 2567 -กลางซอยค้าไม้- · ประตู วงกบ หน้าต่าง uPVC</div>
 
 <script>
-/* ══════════════════════════════════════════════
-   วิธีเพิ่มรูปภาพ: ใส่ path ในอาร์เรย์ images[]
-   ตัวอย่าง: 'images/wood-doors/wood-001.jpg'
-
-   วิธีใช้ PDF: ใส่ path ใน pdfUrl
-   ตัวอย่าง: 'files/catalog-wood.pdf'
-   หรือ Google Drive: 'https://drive.google.com/file/d/ID/preview'
-══════════════════════════════════════════════ */
-const catalogs = {
-  'wood-gallery': {
-    num: '1',
-    title: 'รวมงานประตูไม้จริง',
-    images: [
-     'images/wood-doors/wood-001.jpg',
-    'images/wood-doors/wood-002.jpg',
-    'images/wood-doors/wood-003.jpg',
-    'images/wood-doors/wood-004.jpg',
-    'images/wood-doors/wood-005.jpg',
-    'images/wood-doors/wood-006.jpg',
-    'images/wood-doors/wood-007.jpg',
-    'images/wood-doors/wood-008.jpg',
-    'images/wood-doors/wood-009.jpg',
-    'images/wood-doors/wood-010.jpg',
-    'images/wood-doors/wood-011.jpg',
-    'images/wood-doors/wood-012.jpg',
-    'images/wood-doors/wood-013.jpg',
-    'images/wood-doors/wood-014.jpg',
-    'images/wood-doors/wood-015.jpg',
-    'images/wood-doors/wood-016.jpg',
-    'images/wood-doors/wood-017.jpg',
-    'images/wood-doors/wood-018.jpg',
-    'images/wood-doors/wood-019.jpg',
-    'images/wood-doors/wood-020.jpg',
-    'images/wood-doors/wood-021.jpg',
-    'images/wood-doors/wood-022.jpg',
-    'images/wood-doors/wood-023.jpg',
-    'images/wood-doors/wood-024.jpg',
-    'images/wood-doors/wood-025.jpg',
-    'images/wood-doors/wood-026.jpg',
-    'images/wood-doors/wood-027.jpg',
-    'images/wood-doors/wood-028.jpg',
-    'images/wood-doors/wood-029.jpg',
-    'images/wood-doors/wood-030.jpg',
-    'images/wood-doors/wood-031.jpg',
-    'images/wood-doors/wood-032.jpg',
-    'images/wood-doors/wood-033.jpg',
-    'images/wood-doors/wood-034.jpg',
-    'images/wood-doors/wood-035.jpg',
-    'images/wood-doors/wood-036.jpg',
-    'images/wood-doors/wood-037.jpg',
-    'images/wood-doors/wood-038.jpg',
-    'images/wood-doors/wood-039.jpg',
-    'images/wood-doors/wood-040.jpg',
-    'images/wood-doors/wood-041.jpg',
-    'images/wood-doors/wood-042.jpg',
-    'images/wood-doors/wood-043.jpg',
-    'images/wood-doors/wood-044.jpg',
-    'images/wood-doors/wood-045.jpg',
-    'images/wood-doors/wood-046.jpg',
-    'images/wood-doors/wood-047.jpg',
-    'images/wood-doors/wood-048.jpg',
-    'images/wood-doors/wood-049.jpg',
-    'images/wood-doors/wood-050.jpg',
-    'images/wood-doors/wood-051.jpg',
-    'images/wood-doors/wood-052.jpg',
-    'images/wood-doors/wood-053.jpg',
-    'images/wood-doors/wood-054.jpg',
-    'images/wood-doors/wood-055.jpg',
-    'images/wood-doors/wood-056.jpg',
-    'images/wood-doors/wood-057.jpg',
-    'images/wood-doors/wood-058.jpg',
-    'images/wood-doors/wood-059.jpg',
-    'images/wood-doors/wood-060.jpg',
-    'images/wood-doors/wood-061.jpg',
-    'images/wood-doors/wood-062.jpg',
-    'images/wood-doors/wood-063.jpg',
-    'images/wood-doors/wood-064.jpg',
-    'images/wood-doors/wood-065.jpg',
-    'images/wood-doors/wood-066.jpg',
-    'images/wood-doors/wood-067.jpg',
-    'images/wood-doors/wood-068.jpg',
-    'images/wood-doors/wood-069.jpg',
-    'images/wood-doors/wood-070.jpg',
-    'images/wood-doors/wood-071.jpg',
-    'images/wood-doors/wood-072.jpg',
-    'images/wood-doors/wood-073.jpg',
-    'images/wood-doors/wood-074.jpg',
-    'images/wood-doors/wood-075.jpg',
-    'images/wood-doors/wood-076.jpg',
-    'images/wood-doors/wood-077.jpg',
-    'images/wood-doors/wood-078.jpg',
-    'images/wood-doors/wood-079.jpg',
-    'images/wood-doors/wood-080.jpg',
-    'images/wood-doors/wood-081.jpg',
-    'images/wood-doors/wood-082.jpg',
-    'images/wood-doors/wood-083.jpg',
-    'images/wood-doors/wood-084.jpg',
-    'images/wood-doors/wood-085.jpg',
-    'images/wood-doors/wood-086.jpg',
-    'images/wood-doors/wood-087.jpg',
-    'images/wood-doors/wood-088.jpg',
-    'images/wood-doors/wood-089.jpg',
-    'images/wood-doors/wood-090.jpg',
-    'images/wood-doors/wood-091.jpg',
-    'images/wood-doors/wood-092.jpg',
-    'images/wood-doors/wood-093.jpg',
-    'images/wood-doors/wood-094.jpg',
-    'images/wood-doors/wood-095.jpg',
-    'images/wood-doors/wood-096.jpg',
-    'images/wood-doors/wood-097.jpg',
-    'images/wood-doors/wood-098.jpg',
-    'images/wood-doors/wood-099.jpg',
-    'images/wood-doors/wood-100.jpg',
-    'images/wood-doors/wood-101.jpg',
-    'images/wood-doors/wood-102.jpg',
-    'images/wood-doors/wood-103.jpg',
-    'images/wood-doors/wood-104.jpg',
-    'images/wood-doors/wood-105.jpg',
-    'images/wood-doors/wood-106.jpg',
-    'images/wood-doors/wood-107.jpg',
-    'images/wood-doors/wood-108.jpg',
-    'images/wood-doors/wood-109.jpg',
-    'images/wood-doors/wood-110.jpg',
-    'images/wood-doors/wood-111.jpg',
-    'images/wood-doors/wood-112.jpg',
-    'images/wood-doors/wood-113.jpg',
-    'images/wood-doors/wood-114.jpg',
-    'images/wood-doors/wood-115.jpg',
-    'images/wood-doors/wood-116.jpg',
-    'images/wood-doors/wood-117.jpg',
-    'images/wood-doors/wood-118.jpg',
-    'images/wood-doors/wood-119.jpg',
-    'images/wood-doors/wood-120.jpg',
-    'images/wood-doors/wood-121.jpg',
-      // 'images/wood-doors/wood-001.jpg',
-      // 'images/wood-doors/wood-002.jpg',
-    ],
-    pdfUrl: ''
-  },
-  'install-gallery': {
-    num: '2',
-    title: 'รวมผลงานการติดตั้ง',
-    images: [
-     'images/installation/install-001.jpg',
-    'images/installation/install-002.jpg',
-    'images/installation/install-003.jpg',
-    'images/installation/install-004.jpg',
-    'images/installation/install-005.jpg',
-    'images/installation/install-006.jpg',
-    'images/installation/install-007.jpg',
-    'images/installation/install-008.jpg',
-    'images/installation/install-009.jpg',
-    'images/installation/install-010.jpg',
-    'images/installation/install-011.jpg',
-    'images/installation/install-012.jpg',
-    'images/installation/install-013.jpg',
-    'images/installation/install-014.jpg',
-    'images/installation/install-015.jpg',
-    'images/installation/install-016.jpg',
-    'images/installation/install-017.jpg',
-    'images/installation/install-018.jpg',
-    'images/installation/install-019.jpg',
-    'images/installation/install-020.jpg',
-    'images/installation/install-021.jpg',
-    'images/installation/install-022.jpg',
-    'images/installation/install-023.jpg',
-    'images/installation/install-024.jpg',
-    'images/installation/install-025.jpg',
-    'images/installation/install-026.jpg',
-    'images/installation/install-027.jpg',
-    'images/installation/install-028.jpg',
-    'images/installation/install-029.jpg',
-    'images/installation/install-030.jpg',
-    'images/installation/install-031.jpg',
-    'images/installation/install-032.jpg',
-    'images/installation/install-033.jpg',
-    'images/installation/install-034.jpg',
-    'images/installation/install-035.jpg',
-    'images/installation/install-036.jpg',
-    'images/installation/install-037.jpg',
-    'images/installation/install-038.jpg',
-    'images/installation/install-039.jpg',
-      // 'images/installation/install-001.jpg',
-      // 'images/installation/install-002.jpg',
-    ],
-    pdfUrl: ''
-  },
-  'cat-wood': {
-    num: '3',
-    title: 'แคตตาล็อกประตูไม้จริง',
-    images: [
-    'images/cat-wood/cat-wood-001.jpg',
-    'images/cat-wood/cat-wood-002.jpg',
-    'images/cat-wood/cat-wood-003.jpg',
-    'images/cat-wood/cat-wood-004.jpg',
-    'images/cat-wood/cat-wood-005.jpg',
-    'images/cat-wood/cat-wood-006.jpg',
-    'images/cat-wood/cat-wood-007.jpg',
-    'images/cat-wood/cat-wood-008.jpg',
-    'images/cat-wood/cat-wood-009.jpg',
-    'images/cat-wood/cat-wood-010.jpg',
-    'images/cat-wood/cat-wood-011.jpg',
-    'images/cat-wood/cat-wood-012.jpg',
-    'images/cat-wood/cat-wood-013.jpg',
-    'images/cat-wood/cat-wood-014.jpg',
-    'images/cat-wood/cat-wood-015.jpg',
-    'images/cat-wood/cat-wood-016.jpg',
-    'images/cat-wood/cat-wood-017.jpg',
-    'images/cat-wood/cat-wood-018.jpg',
-    'images/cat-wood/cat-wood-019.jpg',
-    'images/cat-wood/cat-wood-020.jpg',
-    'images/cat-wood/cat-wood-021.jpg',
-    'images/cat-wood/cat-wood-022.jpg',
-    'images/cat-wood/cat-wood-023.jpg',
-    'images/cat-wood/cat-wood-024.jpg',
-    'images/cat-wood/cat-wood-025.jpg',
-    'images/cat-wood/cat-wood-026.jpg',
-    'images/cat-wood/cat-wood-027.jpg',
-    'images/cat-wood/cat-wood-028.jpg',
-    'images/cat-wood/cat-wood-029.jpg',
-    'images/cat-wood/cat-wood-030.jpg',
-    'images/cat-wood/cat-wood-031.jpg',
-    'images/cat-wood/cat-wood-032.jpg',
-    'images/cat-wood/cat-wood-033.jpg',
-    'images/cat-wood/cat-wood-034.jpg',
-    'images/cat-wood/cat-wood-035.jpg',
-    'images/cat-wood/cat-wood-036.jpg',
-    'images/cat-wood/cat-wood-037.jpg',
-    'images/cat-wood/cat-wood-038.jpg',
-    'images/cat-wood/cat-wood-039.jpg',
-      // 'images/cat-wood/cat-wood-001.jpg',
-    ],
-    pdfUrl: '' // หรือใส่: 'files/catalog-wood.pdf'
-  },
-  'cat-exclusive': {
-    num: '4',
-    title: 'แคตตาล็อก uPVC / WPC รุ่น Exclusive',
-    images: [
-    'images/cat-exclusive/cat-exclusive-001.jpg',
-    'images/cat-exclusive/cat-exclusive-002.jpg',
-    'images/cat-exclusive/cat-exclusive-003.jpg',
-    'images/cat-exclusive/cat-exclusive-004.jpg',
-    'images/cat-exclusive/cat-exclusive-005.jpg',
-    'images/cat-exclusive/cat-exclusive-006.jpg',
-    'images/cat-exclusive/cat-exclusive-007.jpg',
-    'images/cat-exclusive/cat-exclusive-008.jpg',
-    'images/cat-exclusive/cat-exclusive-009.jpg',
-    'images/cat-exclusive/cat-exclusive-010.jpg',
-    'images/cat-exclusive/cat-exclusive-011.jpg',
-    'images/cat-exclusive/cat-exclusive-012.jpg',
-    'images/cat-exclusive/cat-exclusive-013.jpg',
-    'images/cat-exclusive/cat-exclusive-014.jpg',
-    'images/cat-exclusive/cat-exclusive-015.jpg',
-    'images/cat-exclusive/cat-exclusive-016.jpg',
-    'images/cat-exclusive/cat-exclusive-017.jpg',
-    'images/cat-exclusive/cat-exclusive-018.jpg',
-    'images/cat-exclusive/cat-exclusive-019.jpg',
-    'images/cat-exclusive/cat-exclusive-020.jpg',
-    'images/cat-exclusive/cat-exclusive-021.jpg',
-    'images/cat-exclusive/cat-exclusive-022.jpg',
-    'images/cat-exclusive/cat-exclusive-023.jpg',
-    'images/cat-exclusive/cat-exclusive-024.jpg',
-      // 'images/cat-exclusive/cat-exclusive-001.jpg',
-    ],
-    pdfUrl: ''
-  },
-  'cat-standard': {
-    num: '5',
-    title: 'แคตตาล็อก uPVC รุ่น Standard',
-    images: [
-      // 'images/cat-standard/cat-standard-001.jpg',
-    ],
-    pdfUrl: ''
-  }
+/* ══════════════════════════════════════════════════════
+   1. รูปไอคอนหน้าหัวข้อแต่ละหมวด (ขนาด 52x52px)
+   ใส่ path รูปได้เลย ถ้าไม่มีจะแสดง icon SVG แทน
+══════════════════════════════════════════════════════ */
+const iconImgs = {
+  wood:     'images/icons/icon-wood.jpg',   // เช่น 'images/icons/icon-wood.jpg'
+  upvcwpc:  'images/icons/icon-upvcwpc.jpg',   // เช่น 'images/icons/icon-upvcwpc.jpg'
+  frame:    'images/icons/icon-frame.jpg',   // เช่น 'images/icons/icon-frame.jpg'
 };
 
-let current = null, idx = 0;
+/* ══════════════════════════════════════════════════════
+   2. รูปตัวอย่างสินค้า 5 รูปต่อหมวด
+   กดดูรูปใหญ่ได้ กด ← → เลื่อนได้
+══════════════════════════════════════════════════════ */
+const productImgs = {
+  wood: [
+     'images/product-wood/wood-sample-01.jpg',
+     'images/product-wood/wood-sample-02.jpg',
+     'images/product-wood/wood-sample-03.jpg',
+     'images/product-wood/wood-sample-04.jpg',
+     'images/product-wood/wood-sample-05.jpg',
+  ],
+  upvcwpc: [
+     'images/product-upvcwpc/upvcwpc-sample-01.jpg',
+     'images/product-upvcwpc/upvcwpc-sample-02.jpg',
+     'images/product-upvcwpc/upvcwpc-sample-03.jpg',
+     'images/product-upvcwpc/upvcwpc-sample-04.jpg',
+     'images/product-upvcwpc/upvcwpc-sample-05.jpg',
+  ],
+  frame: [
+    // 'images/product-frame/frame-sample-01.jpg',
+    // 'images/product-frame/frame-sample-02.jpg',
+    // 'images/product-frame/frame-sample-03.jpg',
+    // 'images/product-frame/frame-sample-04.jpg',
+    // 'images/product-frame/frame-sample-05.jpg',
+  ]
+};
 
+/* ══════════════════════════════════════════════════════
+   3. แคตตาล็อก — ใส่ path รูปหรือ PDF
+══════════════════════════════════════════════════════ */
+const catalogs = {
+  'wood-gallery':    { num:'1', title:'รวมงานประตูไม้จริง',              images:[], pdfUrl:'' },
+  'install-gallery': { num:'2', title:'รวมผลงานการติดตั้ง',               images:[], pdfUrl:'' },
+  'cat-wood':        { num:'3', title:'แคตตาล็อกประตูไม้จริง',            images:[], pdfUrl:'' },
+  'cat-exclusive':   { num:'4', title:'แคตตาล็อก uPVC/WPC รุ่น Exclusive',images:[], pdfUrl:'' },
+  'cat-standard':    { num:'5', title:'แคตตาล็อก uPVC รุ่น Standard',     images:[], pdfUrl:'' },
+};
+
+/* ── โหลดรูปไอคอน ── */
+Object.keys(iconImgs).forEach(key => {
+  if (!iconImgs[key]) return;
+  const el = document.getElementById('icon-' + key);
+  if (el) el.innerHTML = `<img src="${iconImgs[key]}" alt="icon-${key}" />`;
+});
+
+/* ── โหลดรูปตัวอย่างสินค้า ── */
+Object.keys(productImgs).forEach(key => {
+  const slots = document.querySelectorAll(`#imgs-${key} .product-img-slot`);
+  slots.forEach((slot, i) => {
+    if (productImgs[key][i]) {
+      slot.innerHTML = `<img src="${productImgs[key][i]}" alt="ตัวอย่าง ${i+1}" /><div class="product-img-overlay"><span class="product-img-label">ดูรูปใหญ่</span></div>`;
+      slot.onclick = () => openLb(key, i);
+    }
+  });
+});
+
+/* ── Lightbox สำหรับรูปตัวอย่างสินค้า ── */
+let lbKey = '', lbIdx = 0;
+function openLb(key, idx) {
+  if (!productImgs[key] || !productImgs[key][idx]) return;
+  lbKey = key; lbIdx = idx;
+  document.getElementById('lb-img').src = productImgs[key][idx];
+  document.getElementById('lb-counter').textContent = (idx+1) + ' / ' + productImgs[key].length;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb() {
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lbSlide(dir) {
+  const imgs = productImgs[lbKey];
+  lbIdx = Math.max(0, Math.min(imgs.length-1, lbIdx+dir));
+  document.getElementById('lb-img').src = imgs[lbIdx];
+  document.getElementById('lb-counter').textContent = (lbIdx+1) + ' / ' + imgs.length;
+}
+
+/* ── Viewer สำหรับแคตตาล็อก ── */
+let current = null, idx = 0;
 function openViewer(id) {
-  current = catalogs[id];
-  idx = 0;
+  current = catalogs[id]; idx = 0;
   document.getElementById('viewer-num').textContent = current.num;
   document.getElementById('viewer-title').textContent = current.title;
   document.getElementById('viewer').classList.add('open');
   document.body.style.overflow = 'hidden';
   render();
 }
-
 function closeViewer() {
   document.getElementById('viewer').classList.remove('open');
   document.body.style.overflow = '';
   const iframe = document.getElementById('v-iframe');
   if (iframe) iframe.src = '';
 }
-
 function render() {
   const wrap = document.getElementById('viewer-wrap');
   const counter = document.getElementById('viewer-counter');
   const btnP = document.getElementById('btn-prev');
   const btnN = document.getElementById('btn-next');
   wrap.innerHTML = '';
-
   if (!current || (current.images.length === 0 && !current.pdfUrl)) {
-    wrap.innerHTML = `<div class="viewer-placeholder">
-      <div class="viewer-placeholder-box">🖼</div>
-      <p>ยังไม่มีรูปภาพในหมวดนี้<br><br>
-      เปิด <code>index.html</code> ใน VS Code<br>
-      หาคำว่า <code>const catalogs</code><br>
-      แล้วเพิ่ม path รูปในอาร์เรย์ <code>images</code> ค่ะ</p>
-    </div>`;
-    counter.textContent = '— / —';
-    btnP.disabled = true;
-    btnN.disabled = true;
-    return;
+    wrap.innerHTML = `<div class="viewer-placeholder"><div class="viewer-placeholder-box">🖼</div><p>ยังไม่มีรูปภาพในหมวดนี้<br><br>เปิด <code>index.html</code> ใน VS Code<br>หาคำว่า <code>const catalogs</code><br>แล้วเพิ่ม path รูปในอาร์เรย์ <code>images</code> ค่ะ</p></div>`;
+    counter.textContent = '— / —'; btnP.disabled = true; btnN.disabled = true; return;
   }
-
   if (current.pdfUrl) {
     const iframe = document.createElement('iframe');
-    iframe.id = 'v-iframe';
-    iframe.className = 'viewer-iframe';
-    iframe.src = current.pdfUrl;
-    wrap.appendChild(iframe);
-    counter.textContent = 'PDF';
-    btnP.disabled = true;
-    btnN.disabled = true;
-    return;
+    iframe.id = 'v-iframe'; iframe.className = 'viewer-iframe'; iframe.src = current.pdfUrl;
+    wrap.appendChild(iframe); counter.textContent = 'PDF'; btnP.disabled = true; btnN.disabled = true; return;
   }
-
   const img = document.createElement('img');
-  img.src = current.images[idx];
-  img.alt = current.title + ' ' + (idx + 1);
+  img.src = current.images[idx]; img.alt = current.title + ' ' + (idx+1);
   wrap.appendChild(img);
-  counter.textContent = (idx + 1) + ' / ' + current.images.length;
-  btnP.disabled = idx === 0;
-  btnN.disabled = idx === current.images.length - 1;
+  counter.textContent = (idx+1) + ' / ' + current.images.length;
+  btnP.disabled = idx === 0; btnN.disabled = idx === current.images.length - 1;
 }
-
 function changeSlide(dir) {
   if (!current || current.pdfUrl) return;
-  idx = Math.max(0, Math.min(current.images.length - 1, idx + dir));
-  render();
+  idx = Math.max(0, Math.min(current.images.length-1, idx+dir)); render();
 }
 
+/* ── Keyboard shortcuts ── */
 document.addEventListener('keydown', e => {
-  if (!document.getElementById('viewer').classList.contains('open')) return;
-  if (e.key === 'Escape') closeViewer();
-  if (e.key === 'ArrowRight') changeSlide(1);
-  if (e.key === 'ArrowLeft') changeSlide(-1);
+  const lb = document.getElementById('lb').classList.contains('open');
+  const vw = document.getElementById('viewer').classList.contains('open');
+  if (e.key === 'Escape') { if (lb) closeLb(); if (vw) closeViewer(); }
+  if (e.key === 'ArrowRight') { if (lb) lbSlide(1); if (vw) changeSlide(1); }
+  if (e.key === 'ArrowLeft')  { if (lb) lbSlide(-1); if (vw) changeSlide(-1); }
 });
 </script>
 
